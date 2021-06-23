@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/reportWebVitals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/index.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/front/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/setupTests.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624427395208</updated>
       <workItem from="1624427399483" duration="1282000" />
-      <workItem from="1624467239755" duration="1029000" />
+      <workItem from="1624467239755" duration="1598000" />
     </task>
     <servers />
   </component>
