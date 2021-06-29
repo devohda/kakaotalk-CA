@@ -2,9 +2,9 @@
     font-family: NanumBarunGothic;
     src: local(NanumBarunGothic),
     local(NanumBarunGothic),
-    url(styles/fonts/NanumBarunGothic.eot?#iefix) format('embedded-opentype'), /* IE 호환성 */
-    url(styles/fonts/NanumBarunGothic.woff) format('woff'), /* 모던 브라우저(IE9+, Chrome, Safari 등) */
-    url(styles/fonts/NanumBarunGothic.ttf) format('truetype');
+    url(/public/fonts/NanumBarunGothic.eot) format('embedded-opentype'), /* IE 호환성 */
+    url(/public/fonts/NanumBarunGothic.woff) format('woff'), /* 모던 브라우저(IE9+, Chrome, Safari 등) */
+    url(/public/fonts/NanumBarunGothic.ttf) format('truetype');
     font-style: normal;
     font-weight: normal;
     unicode-range: U+0-10FFFF;
@@ -14,9 +14,9 @@
     font-family: NanumBarunGothic;
     src: local(NanumBarunGothicBold),
     local(NanumBarunGothicBold),
-    url(styles/fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
-    url(styles/fonts/NanumBarunGothicBold.woff) format('woff'),
-    url(styles/fonts/NanumBarunGothicBold.ttf) format('truetype');
+    url(/public/fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(/public/fonts/NanumBarunGothicBold.woff) format('woff'),
+    url(/public/fonts/NanumBarunGothicBold.ttf) format('truetype');
     font-style: normal;
     font-weight: bold;
     unicode-range: U+0-10FFFF;
