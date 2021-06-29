@@ -2,159 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard/package-lock.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard/public/profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/.github/workflows/main.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/.prettierignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/css/nextjs-material-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/angular.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/chrome.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/dashboard.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/edge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/firefox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/html.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/map.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/md-react.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/notifications.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/opera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/opt_md_angular_thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/opt_md_thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/opt_md_vue_thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/opt_mdr_thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/safari.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/tables.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/userprofile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/github/vuejs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/bg7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/cover.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/faces/marc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/new_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/reactlogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/sidebar-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/sidebar-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/sidebar-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/sidebar-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/img/tim_80x80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/cardImagesStyles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/checkboxAdnRadioStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/buttonStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardAvatarStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardBodyStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardFooterStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardHeaderStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardIconStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/cardStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/customInputStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/customTabsStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/footerStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/headerLinksStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/headerStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/rtlHeaderLinksStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/sidebarStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/snackbarContentStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/tableStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/tasksStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/components/typographyStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/dropdownStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/layouts/adminStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/layouts/rtlStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/tooltipStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/views/dashboardStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/views/iconsStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/assets/jss/nextjs-material-dashboard/views/rtlStyle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/CardAvatar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/CardBody.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/CardFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/CardHeader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Card/CardIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/CustomButtons/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/CustomInput/CustomInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/CustomTabs/CustomTabs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/FixedPlugin/FixedPlugin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Footer/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Grid/GridContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Grid/GridItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Hooks/useWindowSize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Navbars/AdminNavbarLinks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Navbars/Navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Navbars/RTLNavbarLinks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/PageChange/PageChange.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Sidebar/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Snackbar/Snackbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Snackbar/SnackbarContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Table/Table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Tasks/Tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Danger.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Muted.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Primary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Quote.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Success.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/components/Typography/Warning.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/css/demo-documentation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/css/material-dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/apple-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/cover.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/faces/marc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/new_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/reactlogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/sidebar-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/sidebar-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/sidebar-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/sidebar-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/img/tim_80x80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/assets/js/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/documentation/tutorial-components.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/layouts/Admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/layouts/RTL.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/_app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/_document.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/_error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/icons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/maps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/notifications.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/table-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/typography.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/upgrade-to-pro.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/admin/user-profile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/pages/rtl/rtl-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/routes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/variables/charts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/variables/general.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-material-dashboard-master/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/MyChart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/Home.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothic.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothic.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothic.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicBold.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicBold.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicBold.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicUltraLight.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/fonts/NanumBarunGothicUltraLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/styles/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chakra-nextjs-dashboard" beforeDir="false" afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chakra-nextjs-dashboard/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chakra-nextjs-dashboard/public/avatar-1.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/chakra-nextjs-dashboard/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/chakra-nextjs-dashboard/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/chakra-nextjs-dashboard" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1uKw3ignHelIDLiWj8SJV9LonhZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -169,17 +69,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/chakra-nextjs-dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="E:\WebstormProjects\kakaotalk-CA\nextjs-material-dashboard-master\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebstormProjects\kakaotalk-CA\front\src\fonts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\WebstormProjects\kakaotalk-CA\front\styles" />
+      <recent name="E:\WebstormProjects\kakaotalk-CA\front\public" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\chakra-nextjs-dashboard\public" />
     </key>
   </component>
@@ -195,6 +101,9 @@
       <workItem from="1624467239755" duration="2291000" />
       <workItem from="1624625504297" duration="1744000" />
       <workItem from="1624778372388" duration="6347000" />
+      <workItem from="1624954155211" duration="1315000" />
+      <workItem from="1624978084995" duration="453000" />
+      <workItem from="1624978558079" duration="4706000" />
     </task>
     <servers />
   </component>
