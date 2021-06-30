@@ -2,9 +2,9 @@
     font-family: NanumBarunGothic;
     src: local(NanumBarunGothic),
     local(NanumBarunGothic),
-    url(/public/fonts/NanumBarunGothic.eot) format('embedded-opentype'), /* IE 호환성 */
-    url(/public/fonts/NanumBarunGothic.woff) format('woff'), /* 모던 브라우저(IE9+, Chrome, Safari 등) */
-    url(/public/fonts/NanumBarunGothic.ttf) format('truetype');
+    url(/fonts/NanumBarunGothic.eot) format('embedded-opentype'), /* IE 호환성 */
+    url(/fonts/NanumBarunGothic.woff) format('woff'), /* 모던 브라우저(IE9+, Chrome, Safari 등) */
+    url(/fonts/NanumBarunGothic.ttf) format('truetype');
     font-style: normal;
     font-weight: normal;
     unicode-range: U+0-10FFFF;
@@ -14,9 +14,9 @@
     font-family: NanumBarunGothic;
     src: local(NanumBarunGothicBold),
     local(NanumBarunGothicBold),
-    url(/public/fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
-    url(/public/fonts/NanumBarunGothicBold.woff) format('woff'),
-    url(/public/fonts/NanumBarunGothicBold.ttf) format('truetype');
+    url(/fonts/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+    url(/fonts/NanumBarunGothicBold.woff) format('woff'),
+    url(/fonts/NanumBarunGothicBold.ttf) format('truetype');
     font-style: normal;
     font-weight: bold;
     unicode-range: U+0-10FFFF;
@@ -25,7 +25,7 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: NanumBarunGothic, sans-serif;
+    font-family: NanumBarunGothic, sans-serif !important;
 }
 
 a {
@@ -35,4 +35,33 @@ a {
 
 * {
     box-sizing: border-box;
+}
+
+.active{
+    color : #fff;
+}
+
+.active-icon{
+    color : #F68657 !important;
+}
+
+.sidebar-items{
+    color : #777;
+    font-size: large;
+}
+
+.sidebar-items p{
+    margin-left: 1em;
+}
+
+.sidebar-items:hover p{
+    color : #fff;
+}
+
+.sidebar-items:hover svg{
+    color : #F68657
+}
+
+.sidebar-items:not(:last-child){
+    margin-bottom: 1.5em;
 }
