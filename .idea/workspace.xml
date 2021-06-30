@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
-      <change afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/textFiles/KakaoTalk_20210701_0417_10_897_박새란 언니 지기전 19.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/textFiles/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/front/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/hello.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/front/yarn.lock" afterDir="false" />
     </list>
@@ -80,6 +78,16 @@
       <recent name="E:\WebstormProjects\kakaotalk-CA\chakra-nextjs-dashboard\public" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front/pages/dashboard/home.js" working-dir="$PROJECT_DIR$/front/pages/dashboard">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.home.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,7 +108,7 @@
       <workItem from="1625001327040" duration="439000" />
       <workItem from="1625001796926" duration="1467000" />
       <workItem from="1625038000684" duration="3389000" />
-      <workItem from="1625043315913" duration="5639000" />
+      <workItem from="1625043315913" duration="24052000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>

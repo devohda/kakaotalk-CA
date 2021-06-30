@@ -25,7 +25,6 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: NanumBarunGothic, sans-serif !important;
 }
 
 a {
@@ -37,6 +36,7 @@ a {
 * {
     box-sizing: border-box;
     box-shadow: none !important;
+    font-family: NanumBarunGothic, sans-serif !important;
 }
 
 .active{
@@ -66,4 +66,18 @@ a {
 
 .sidebar-items:not(:last-child){
     margin-bottom: 1.5em;
+}
+
+.talk-data{
+    background-color: #fdc573;
+    border-radius: 5px;
+}
+.talk-data:hover{
+    transition-duration: 0.1s;
+    background-color: #f4bf6f;
+    cursor: pointer;
+}
+.talk-data:active{
+    transition-duration: 0.1s;
+    background-color: #e5b56a
 }

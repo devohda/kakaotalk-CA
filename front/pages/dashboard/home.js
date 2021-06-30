@@ -19,7 +19,9 @@ import {
 	Button,
 	Input,
 	InputGroup,
-	InputLeftElement
+	InputLeftElement,
+	FormControl,
+	FormLabel
 } from '@chakra-ui/react';
 import {
 	FiHome,
@@ -36,7 +38,25 @@ import {
 } from 'react-icons/fi';
 import MyChart from '../../components/MyChart';
 
-export default function dashboard() {
+const Dashboard = () => {
+	const [file, setFile] = useState(null);
+
+	const uploadToClient = event => {
+		if (event.target.files && event.target.files[0]) {
+			const i = event.target.files[0];
+			setFile(i);
+		}
+	};
+
+	const uploadToServer = async event => {
+		const body = new FormData();
+		body.append('file', file);
+		const response = await fetch('/api/file', {
+			method: 'POST',
+			body
+		});
+	};
+
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
 			{/*column 1*/}
@@ -144,17 +164,43 @@ export default function dashboard() {
 						Dahye
 					</Flex>
 				</Heading>
+				<FormControl
+					w="50%"
+					h="5vh"
+					mt="5vh"
+					mb="1vh"
+					alignSelf="center"
+				>
+					<Flex w="100%" h="100%">
+						<FormLabel
+							className="talk-data"
+							w="100%"
+							h="100%"
+							lineHeight="5vh"
+							m="0"
+							textAlign="center"
+							alignSelf="center"
+						>
+							{file != null
+								? file.name
+								: '카카오톡 대화 파일 업로드 (.txt, .csv)'}
+						</FormLabel>
+						<Input
+							type="file"
+							onChange={uploadToClient}
+							display="none"
+						/>
+					</Flex>
+				</FormControl>
 				<Button
 					w="50%"
 					h="5vh"
-					m="5vh"
-					bgColor="#fdc573"
+					mt="1vh"
+					textAlign="center"
 					alignSelf="center"
+					onClick={uploadToServer}
 				>
-					<Flex flexDir="column">
-						<Text>카카오톡 대화 파일 업로드</Text>
-						<Text>(.txt, .csv)</Text>
-					</Flex>
+					분석하기
 				</Button>
 			</Flex>
 
@@ -162,4 +208,6 @@ export default function dashboard() {
 			<Flex w="35%" bg="#f5f5f5" p="3%" overflow="auto"></Flex>
 		</Flex>
 	);
-}
+};
+
+export default Dashboard;
