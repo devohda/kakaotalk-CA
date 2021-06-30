@@ -47,7 +47,11 @@ export default function dashboard() {
 				backgroundColor="#F6B352"
 				color="#fff"
 			>
-				<Flex flexDir="column" justifyContent="space-between" h="100vh">
+				<Flex
+					flexDir="column"
+					justifyContent="space-between"
+					h="100vh"
+				>
 					<Flex flexDir="column" as="nav">
 						<Heading
 							mt={50}
@@ -63,7 +67,7 @@ export default function dashboard() {
 							justifyContent="center"
 						>
 							<Flex className="sidebar-items">
-								<Link>
+								<Link href="/dashboard/home">
 									<Icon
 										as={FiHome}
 										fontSize="2xl"
@@ -71,64 +75,91 @@ export default function dashboard() {
 									/>
 								</Link>
 								<Link
-                                    _hover={{textDecor : 'none'}}
-                                >
-									<Text className="active">Home</Text>
+									href="/dashboard/home"
+									_hover={{ textDecor: 'none' }}
+								>
+									<Text className="active">
+										Home
+									</Text>
 								</Link>
 							</Flex>
 							<Flex className="sidebar-items">
-								<Link>
-									<Icon
-										as={FiHome}
-										fontSize="2xl"
-									/>
+								<Link href="/dashboard/analyze">
+									<Icon as={FiHome} fontSize="2xl" />
 								</Link>
 								<Link
-									_hover={{textDecor : 'none'}}
+									href="/dashboard/analyze"
+									_hover={{ textDecor: 'none' }}
 								>
-									<Text>Home</Text>
+									<Text>analyze1</Text>
 								</Link>
 							</Flex>
 							<Flex className="sidebar-items">
-								<Link>
-									<Icon
-										as={FiHome}
-										fontSize="2xl"
-									/>
+								<Link href="/dashboard/analyze">
+									<Icon as={FiHome} fontSize="2xl" />
 								</Link>
 								<Link
-									_hover={{textDecor : 'none'}}
+									href="/dashboard/analyze"
+									_hover={{ textDecor: 'none' }}
 								>
-									<Text>Home</Text>
+									<Text>analyze2</Text>
 								</Link>
 							</Flex>
 							<Flex className="sidebar-items">
-								<Link>
-									<Icon
-										as={FiHome}
-										fontSize="2xl"
-									/>
+								<Link href="/dashboard/analyze">
+									<Icon as={FiHome} fontSize="2xl" />
 								</Link>
 								<Link
-									_hover={{textDecor : 'none'}}
+									href="/dashboard/analyze"
+									_hover={{ textDecor: 'none' }}
 								>
-									<Text>Home</Text>
+									<Text>analyze3</Text>
 								</Link>
 							</Flex>
 						</Flex>
 					</Flex>
-					<Flex flexDir="column" alignItems="center" mb={10} mt={5}>
-						<Avatar my={2} src="./photo.jpg"/>
+					<Flex
+						flexDir="column"
+						alignItems="center"
+						mb={10}
+						mt={5}
+					>
+						<Avatar my={2} src="../photo.jpg" />
 						<Text textAlign="center">OH DAHYE</Text>
 					</Flex>
 				</Flex>
 			</Flex>
 
 			{/*column 2*/}
-			<Flex></Flex>
+			<Flex
+				w="55%"
+				p="3%"
+				flexDir="column"
+				overflow="auto"
+				minH="100vh"
+			>
+				<Heading fontWeight="normal" mb={4} letterSpacing="tight">
+					Welcome back,{' '}
+					<Flex fontWeight="bold" display="inline-flex">
+						Dahye
+					</Flex>
+				</Heading>
+				<Button
+					w="50%"
+					h="5vh"
+					m="5vh"
+					bgColor="#fdc573"
+					alignSelf="center"
+				>
+					<Flex flexDir="column">
+						<Text>카카오톡 대화 파일 업로드</Text>
+						<Text>(.txt, .csv)</Text>
+					</Flex>
+				</Button>
+			</Flex>
 
 			{/*column 3*/}
-			<Flex></Flex>
+			<Flex w="35%" bg="#f5f5f5" p="3%" overflow="auto"></Flex>
 		</Flex>
 	);
 }
