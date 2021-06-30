@@ -13,14 +13,36 @@ function fillZero(str, width) {
 		: new Array(width - str.length + 1).join('0') + str; //남는 길이만큼 0으로 채움
 }
 
+function jsonToCSV(json_data) {
+	const json_array = json_data;
+	let csv_string = '';
+	const titles = Object.keys(json_array[0]);
+	titles.forEach((title, index) => {
+		csv_string +=
+			index !== titles.length - 1 ? `${title},` : `${title}\r\n`;
+	});
+	json_array.forEach((content, index) => {
+		let row = '';
+		for (let title in content) {
+			row += row === '' ? `${content[title]}` : `,${content[title]}`;
+		}
+		csv_string +=
+			index !== json_array.length - 1 ? `${row}\r\n` : `${row}`;
+	});
+	return csv_string;
+}
+
 const saveFile = async file => {
-	const data = fs.readFileSync(file.path);
+	const textfile = fs.readFileSync(file.path);
 
 	/*파일 데이터 추출*/
-	const stringData = data.toString().split('\r\n');
+	const chatData = [];
+
+	const stringData = textfile.toString().split('\r\n');
 	let chatDate;
 	stringData.forEach(str => {
 		if (str.substr(0, 15) === '---------------') {
+			//날짜 추출
 			const cuttingstr = str.split(' ');
 			const year = cuttingstr[1].substr(0, 4);
 			const month = cuttingstr[2].substr(0, cuttingstr[2].length - 1);
@@ -30,9 +52,9 @@ const saveFile = async file => {
 				month,
 				2
 			)}-${fillZero(day, 2)}`;
-			console.log(chatDate);
 		} else {
 			if (str[0] === '[') {
+				// 발화자, 시간, 내용 추출
 				const user = str.substr(1, str.indexOf(']') - 1);
 				str = str.substr(str.indexOf(']') + 2);
 
@@ -42,23 +64,27 @@ const saveFile = async file => {
 
 				time[1] = Number(time[1]);
 				time[2] = Number(time[2]);
-
-				const timeData = `${fillZero(
-					String(date[1]),
-					2
-				)}:${fillZero(String(date[2]), 2)}`;
 				if (time[0] === '오후') time[1] += 12;
 
-				const chatDatetime = `${chatDate} ${timeData}`;
-				console.log(chatDatetime);
+				const timeData = `${fillZero(
+					String(time[1]),
+					2
+				)}:${fillZero(String(time[2]), 2)}:00`;
+				const date = `${chatDate} ${timeData}`;
+
+				const message = str.substr(str.indexOf(']') + 2);
+
+				chatData.push({ Date: date, User: user, Message: message });
 			}
 		}
 	});
 
-	fs.writeFileSync(`./public/textFiles/${file.name}`, data);
+	const csvdata = jsonToCSV(chatData);
 
+	fs.writeFileSync(`./public/textFiles/test.csv`, csvdata);
 	await fs.unlinkSync(file.path);
-	return true;
+
+	return;
 };
 
 const post = async (req, res) => {
