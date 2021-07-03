@@ -13,32 +13,11 @@ function fillZero(str, width) {
 		: new Array(width - str.length + 1).join('0') + str; //남는 길이만큼 0으로 채움
 }
 
-function jsonToCSV(json_data) {
-	const json_array = json_data;
-	let csv_string = '';
-	const titles = Object.keys(json_array[0]);
-	titles.forEach((title, index) => {
-		csv_string +=
-			index !== titles.length - 1 ? `${title},` : `${title}\r\n`;
-	});
-	json_array.forEach((content, index) => {
-		let row = '';
-		for (let title in content) {
-			row += row === '' ? `${content[title]}` : `,${content[title]}`;
-		}
-		csv_string +=
-			index !== json_array.length - 1 ? `${row}\r\n` : `${row}`;
-	});
-	return csv_string;
-}
-
-const saveFile = async file => {
-	const textfile = fs.readFileSync(file.path);
-
+const txtToJSON = txt_file => {
 	/*파일 데이터 추출*/
 	const chatData = [];
 
-	const stringData = textfile.toString().split('\r\n');
+	const stringData = txt_file.toString().split('\r\n');
 	let chatDate;
 	stringData.forEach(str => {
 		if (str.substr(0, 15) === '---------------') {
@@ -78,12 +57,43 @@ const saveFile = async file => {
 			}
 		}
 	});
+};
 
-	const csvdata = jsonToCSV(chatData);
+const csvToJSON = csv_file => {
+	const rows = csv_file.split('\r\n');
+	const jsonArray = [];
+	const header = rows[0].split(',');
+	for (let i = 1; i < rows.length; i++) {
+		let obj = {};
+		let row = rows[i].split(',');
+		for (let j = 0; j < header.length; j++) {
+			obj[header[j]] = row[j];
+		}
+		jsonArray.push(obj);
+	}
+	return jsonArray;
+};
 
-	fs.writeFileSync(`./public/textFiles/test.csv`, csvdata);
+const saveFile = async file => {
+	const fileData = fs.readFileSync(file.path);
+
+	const fileName = file.name;
+	const fileNameSplit = fileName.split('.');
+	const fileExtension = fileNameSplit[fileNameSplit.length - 1];
+
+	let jsonData;
+	switch (fileExtension) {
+		case 'txt':
+			jsonData = txtToJSON(file);
+			break;
+		case 'csv':
+			jsonData = csvToJSON(file);
+			break;
+		default:
+			break;
+	}
+
 	await fs.unlinkSync(file.path);
-
 	return;
 };
 
