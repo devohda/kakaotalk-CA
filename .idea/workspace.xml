@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
-      <change afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/public/textFiles/KakaoTalk_20210701_0417_10_897_박새란 언니 지기전 19.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/public/textFiles/test.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/MyChart2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/MyChart3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/MyChart4.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/MyChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/MyChart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/api/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/dashboard/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/front/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +113,11 @@
       <workItem from="1625001327040" duration="439000" />
       <workItem from="1625001796926" duration="1467000" />
       <workItem from="1625038000684" duration="3389000" />
-      <workItem from="1625043315913" duration="24052000" />
+      <workItem from="1625043315913" duration="27197000" />
+      <workItem from="1625096152996" duration="77000" />
+      <workItem from="1625119139073" duration="1149000" />
+      <workItem from="1625259832633" duration="1402000" />
+      <workItem from="1625305317786" duration="13359000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>

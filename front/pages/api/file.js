@@ -57,9 +57,13 @@ const txtToJSON = txt_file => {
 			}
 		}
 	});
+
+	return chatData;
 };
 
 const csvToJSON = csv_file => {
+	csv_file = csv_file.toString();
+
 	const rows = csv_file.split('\r\n');
 	const jsonArray = [];
 	const header = rows[0].split(',');
@@ -84,10 +88,10 @@ const saveFile = async file => {
 	let jsonData;
 	switch (fileExtension) {
 		case 'txt':
-			jsonData = txtToJSON(file);
+			jsonData = txtToJSON(fileData);
 			break;
 		case 'csv':
-			jsonData = csvToJSON(file);
+			jsonData = csvToJSON(fileData);
 			break;
 		default:
 			break;

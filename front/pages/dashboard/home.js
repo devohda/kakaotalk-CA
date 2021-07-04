@@ -23,20 +23,11 @@ import {
 	FormControl,
 	FormLabel
 } from '@chakra-ui/react';
-import {
-	FiHome,
-	FiPieChart,
-	FiDollarSign,
-	FiBox,
-	FiCalendar,
-	FiChevronDown,
-	FiChevronUp,
-	FiPlus,
-	FiCreditCard,
-	FiSearch,
-	FiBell
-} from 'react-icons/fi';
+import { FiHome, FiBarChart, FiPieChart, FiBarChart2 } from 'react-icons/fi';
 import MyChart from '../../components/MyChart';
+import MyChart2 from '../../components/MyChart2';
+import MyChart3 from '../../components/MyChart3';
+import MyChart4 from '../../components/MyChart4';
 
 const Dashboard = () => {
 	const [file, setFile] = useState(null);
@@ -105,7 +96,10 @@ const Dashboard = () => {
 							</Flex>
 							<Flex className="sidebar-items">
 								<Link href="/dashboard/analyze">
-									<Icon as={FiHome} fontSize="2xl" />
+									<Icon
+										as={FiBarChart}
+										fontSize="2xl"
+									/>
 								</Link>
 								<Link
 									href="/dashboard/analyze"
@@ -116,7 +110,10 @@ const Dashboard = () => {
 							</Flex>
 							<Flex className="sidebar-items">
 								<Link href="/dashboard/analyze">
-									<Icon as={FiHome} fontSize="2xl" />
+									<Icon
+										as={FiBarChart2}
+										fontSize="2xl"
+									/>
 								</Link>
 								<Link
 									href="/dashboard/analyze"
@@ -127,7 +124,10 @@ const Dashboard = () => {
 							</Flex>
 							<Flex className="sidebar-items">
 								<Link href="/dashboard/analyze">
-									<Icon as={FiHome} fontSize="2xl" />
+									<Icon
+										as={FiPieChart}
+										fontSize="2xl"
+									/>
 								</Link>
 								<Link
 									href="/dashboard/analyze"
@@ -159,7 +159,7 @@ const Dashboard = () => {
 				minH="100vh"
 			>
 				<Heading fontWeight="normal" mb={4} letterSpacing="tight">
-					Welcome back,{' '}
+					Welcome back,
 					<Flex fontWeight="bold" display="inline-flex">
 						Dahye
 					</Flex>
@@ -195,6 +195,7 @@ const Dashboard = () => {
 				<Button
 					w="50%"
 					h="5vh"
+					lineHeight="5vh"
 					mt="1vh"
 					textAlign="center"
 					alignSelf="center"
@@ -202,10 +203,47 @@ const Dashboard = () => {
 				>
 					분석하기
 				</Button>
+				<Flex flexDir="column" mt={100} mb={100}>
+					<Text marginY="2vh" fontSize="2xl">
+						분석 결과
+					</Text>
+					<MyChart />
+				</Flex>
 			</Flex>
 
 			{/*column 3*/}
-			<Flex w="35%" bg="#f5f5f5" p="3%" overflow="auto"></Flex>
+			<Flex
+				flexDir="column"
+				w="35%"
+				bg="#f5f5f5"
+				p="3%"
+				overflow="auto"
+			>
+				<Flex flexDir="column" marginY="5%" marginX="auto">
+					<Text marginY={3} fontWeight="bold" fontSize="2xl">
+						분석 1
+					</Text>
+					<Flex flexDir="row" w="80%" alignItems="center">
+						<MyChart2 />
+					</Flex>
+				</Flex>
+				<Flex flexDir="column" marginY="5%" marginX="auto">
+					<Text marginY={3} fontWeight="bold" fontSize="2xl">
+						분석 2
+					</Text>
+					<Flex flexDir="row" w="80%" alignItems="center">
+						<MyChart3 />
+					</Flex>
+				</Flex>
+				<Flex flexDir="column" marginY="5%" marginX="auto">
+					<Text marginY={3} fontWeight="bold" fontSize="2xl">
+						분석 3
+					</Text>
+					<Flex flexDir="row" w="80%" alignItems="center">
+						<MyChart4 />
+					</Flex>
+				</Flex>
+			</Flex>
 		</Flex>
 	);
 };
