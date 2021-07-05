@@ -1,6 +1,12 @@
 import formidable from 'formidable';
 import fs from 'fs';
 
+export const config = {
+	api: {
+		bodyParser: false
+	}
+};
+
 // 숫자를 받아서 width 길이 만큼 앞자리에 0을 추가하여 string으로 반환하는 함수
 function fillZero(str, width) {
 	return str.length >= width
@@ -26,7 +32,12 @@ const txtToJSON = txt_file => {
 			const month = cuttingstr[2].substr(0, cuttingstr[2].length - 1);
 			const day = cuttingstr[3].substr(0, cuttingstr[3].length - 1);
 
-			chatDate = ${fillZero(year, 4)} + '-' + fillZero(month,2) + '-' + fillZero(day, 2);
+			chatDate =
+				fillZero(year, 4) +
+				'-' +
+				fillZero(month, 2) +
+				'-' +
+				fillZero(day, 2);
 		} else {
 			if (str[0] === '[') {
 				// 발화자, 시간, 내용 추출
@@ -44,7 +55,11 @@ const txtToJSON = txt_file => {
 				time[2] = Number(time[2]);
 				if (time[0] === '오후') time[1] += 12;
 
-				const timeData = fillZero(String(time[1]), 2) + ':' + fillZero(String(time[2]), 2) + ':00';
+				const timeData =
+					fillZero(String(time[1]), 2) +
+					':' +
+					fillZero(String(time[2]), 2) +
+					':00';
 				const date = `${chatDate} ${timeData}`;
 
 				// 내용 추출
@@ -65,7 +80,7 @@ const csvToJSON = csv_file => {
 
 	// 가장 첫 번째 줄에 ',' 을 기준으로 데이터 제목이 있으므로 추출 (ex. '이름','시간','나이')
 	const header = rows[0].split(',');
-	
+
 	// ',' 을 기준으로 데이터 분리시켜서 object 만든 후 배열에 넣어 JSON 형식으로 만들기
 	const jsonArray = [];
 	for (let i = 1; i < rows.length; i++) {
@@ -83,24 +98,23 @@ const csvToJSON = csv_file => {
 const saveFile = async file => {
 	// 파일 읽기
 	const fileData = fs.readFileSync(file.path);
-
-	// 파일 확장자 찾기
-	const fileName = file.name;
-	const fileNameSplit = fileName.split('.');
-	const fileExtension = fileNameSplit[fileNameSplit.length - 1];
-
-	// 확장자에 따라서 .txt, .csv 파일을 JSON 객체로 변환
-	let jsonData;
-	switch (fileExtension) {
-		case 'txt':
-			jsonData = txtToJSON(fileData);
-			break;
-		case 'csv':
-			jsonData = csvToJSON(fileData);
-			break;
-		default:
-			break;
-	}
+	// // 파일 확장자 찾기
+	// const fileName = file.name;
+	// const fileNameSplit = fileName.split('.');
+	// const fileExtension = fileNameSplit[fileNameSplit.length - 1];
+	//
+	// // 확장자에 따라서 .txt, .csv 파일을 JSON 객체로 변환
+	// let jsonData;
+	// switch (fileExtension) {
+	// 	case 'txt':
+	// 		jsonData = txtToJSON(fileData);
+	// 		break;
+	// 	case 'csv':
+	// 		jsonData = csvToJSON(fileData);
+	// 		break;
+	// 	default:
+	// 		break;
+	// }
 
 	await fs.unlinkSync(file.path);
 	return;
@@ -114,11 +128,15 @@ const post = async (req, res) => {
 	});
 };
 
+const sendJSONData = async (req, res) => {};
+
 export default (req, res) => {
 	switch (req.method) {
 		case 'POST':
 			return new Promise((resolve, reject) => {
-				post(req, res);
+				post(req, res)
+					.then(r => console.log(r))
+					.catch(c => console.log(c));
 			});
 		case 'PUT':
 			console.log('PUT');

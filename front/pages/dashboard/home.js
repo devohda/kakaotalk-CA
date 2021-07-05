@@ -26,11 +26,14 @@ const Dashboard = () => {
 
 	const uploadToServer = async event => {
 		if (file) {
-			const body = new FormData();
-			body.append('file', file);
+			const formData = new FormData();
+			formData.append('file', file);
 			const response = await fetch('/api/file', {
 				method: 'POST',
-				body
+				headers: {
+					'Content-Type': 'multipart/form-data'
+				},
+				body: formData
 			});
 		} else {
 			alert('파일을 선택하세요.');
