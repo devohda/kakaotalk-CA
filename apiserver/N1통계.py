@@ -24,6 +24,8 @@ df_month = df_2021.groupby(["year_month"]).count().reset_index()
 df_month = df_month[["year_month","Message"]] #df_month를 시각화하면 됩니당!
 
 #2. 우리는 24시간중 언제 대화를 많이 할까?
-data["hour"] = data.Date.str[11:13]
-df_hour = data.groupby(["hour"]).count().reset_index()
-df_hour = df_hour[["hour","Message"]] #df_hour을 시각화하면 됩니당.
+data["date"] = data.Date.str[:10]
+data["hour"] = data.Date.str[11:13].astype(int)
+data["timeslot"] = data["hour"].apply(time_24)
+df_hour = data.groupby(["date","timeslot"]).count().reset_index() #하루 timeslot별로 count
+df_hour = df_hour.groupby(["timeslot"])["Message"].mean().astype(int) #timeslot기준으로 평균값 -> 시각화하면됩니당!

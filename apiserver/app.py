@@ -11,10 +11,12 @@ api = Api(app)  # Flask 객체에 Api 객체 등록
 class HelloWorld(Resource):
     def post(self):
         #requset는 json 형태로 반환됨
-        #print(request.is_json)
         parsed_request = request.get_json()
 
-        return {"hello": "world!"}
+
+        data = pd.DataFrame(parsed_request)
+        total_text = len(data)
+        return total_text
 
 
 
