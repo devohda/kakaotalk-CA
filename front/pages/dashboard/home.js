@@ -15,25 +15,22 @@ import MyChart4 from '../../components/MyChart4';
 import Navigation from '../../components/Navigation';
 
 const Dashboard = () => {
-	const [file, setFile] = useState(null);
+	const [fileData, setFileData] = useState(null);
 
 	const uploadToClient = event => {
 		if (event.target.files && event.target.files[0]) {
 			const i = event.target.files[0];
-			setFile(i);
+			setFileData(i);
 		}
 	};
 
 	const uploadToServer = async event => {
-		if (file) {
-			const formData = new FormData();
-			formData.append('file', file);
+		if (fileData) {
+			const body = new FormData();
+			body.append('file', fileData);
 			const response = await fetch('/api/file', {
 				method: 'POST',
-				headers: {
-					'Content-Type': 'multipart/form-data'
-				},
-				body: formData
+				body
 			});
 		} else {
 			alert('파일을 선택하세요.');
@@ -76,8 +73,8 @@ const Dashboard = () => {
 							textAlign="center"
 							alignSelf="center"
 						>
-							{file != null
-								? file.name
+							{fileData != null
+								? fileData.name
 								: '카카오톡 대화 파일 업로드 (.txt, .csv)'}
 						</FormLabel>
 						<Input

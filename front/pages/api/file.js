@@ -98,24 +98,26 @@ const csvToJSON = csv_file => {
 const saveFile = async file => {
 	// 파일 읽기
 	const fileData = fs.readFileSync(file.path);
-	// // 파일 확장자 찾기
-	// const fileName = file.name;
-	// const fileNameSplit = fileName.split('.');
-	// const fileExtension = fileNameSplit[fileNameSplit.length - 1];
-	//
-	// // 확장자에 따라서 .txt, .csv 파일을 JSON 객체로 변환
-	// let jsonData;
-	// switch (fileExtension) {
-	// 	case 'txt':
-	// 		jsonData = txtToJSON(fileData);
-	// 		break;
-	// 	case 'csv':
-	// 		jsonData = csvToJSON(fileData);
-	// 		break;
-	// 	default:
-	// 		break;
-	// }
 
+	// 파일 확장자 찾기
+	const fileName = file.name;
+	const fileNameSplit = fileName.split('.');
+	const fileExtension = fileNameSplit[fileNameSplit.length - 1];
+
+	// 확장자에 따라서 .txt, .csv 파일을 JSON 객체로 변환
+	let jsonData;
+	switch (fileExtension) {
+		case 'txt':
+			jsonData = txtToJSON(fileData);
+			break;
+		case 'csv':
+			jsonData = csvToJSON(fileData);
+			break;
+		default:
+			break;
+	}
+
+	console.log(jsonData);
 	await fs.unlinkSync(file.path);
 	return;
 };
@@ -134,9 +136,7 @@ export default (req, res) => {
 	switch (req.method) {
 		case 'POST':
 			return new Promise((resolve, reject) => {
-				post(req, res)
-					.then(r => console.log(r))
-					.catch(c => console.log(c));
+				post(req, res);
 			});
 		case 'PUT':
 			console.log('PUT');
