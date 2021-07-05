@@ -16,7 +16,7 @@ function fillZero(str, width) {
 }
 
 const txtToJSON = txt_file => {
-	const JSONData = [];
+	const jsonArray = [];
 
 	// binary 형식을 문자열로 바꾸고 한 줄씩 잘라 배열 생성
 	const rows = txt_file.toString().split('\r\n');
@@ -67,12 +67,16 @@ const txtToJSON = txt_file => {
 				const message = str.substr(str.indexOf(']') + 2);
 
 				// JSON 형식으로 만들기
-				JSONData.push({ Date: date, User: user, Message: message });
+				jsonArray.push({
+					Date: date,
+					User: user,
+					Message: message
+				});
 			}
 		}
 	});
 
-	return JSONData;
+	return jsonArray;
 };
 
 const csvToJSON = csv_file => {
@@ -126,7 +130,10 @@ const post = async (req, res) => {
 	const form = new formidable.IncomingForm();
 	form.parse(req, async (err, fields, files) => {
 		const jsonData = await convertFile(files.file);
-		const result = await axios.get('http://localhost:5000/hello');
+		const result = await axios.post(
+			'http://localhost:5000/hello',
+			jsonData
+		);
 		console.log(result.data);
 		return res.status(201).send('');
 	});
