@@ -1,5 +1,6 @@
 import formidable from 'formidable';
 import fs from 'fs';
+import axios from 'axios';
 
 export const config = {
 	api: {
@@ -95,7 +96,7 @@ const csvToJSON = csv_file => {
 	return jsonArray;
 };
 
-const saveFile = async file => {
+const convertFile = async file => {
 	// 파일 읽기
 	const fileData = fs.readFileSync(file.path);
 
@@ -117,15 +118,16 @@ const saveFile = async file => {
 			break;
 	}
 
-	console.log(jsonData);
 	await fs.unlinkSync(file.path);
-	return;
+	return jsonData;
 };
 
 const post = async (req, res) => {
 	const form = new formidable.IncomingForm();
 	form.parse(req, async (err, fields, files) => {
-		await saveFile(files.file);
+		const jsonData = await convertFile(files.file);
+		const result = await axios.get('http://localhost:5000/hello');
+		console.log(result.data);
 		return res.status(201).send('');
 	});
 };
