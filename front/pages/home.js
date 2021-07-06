@@ -1,4 +1,4 @@
-import React, { useState, useLocalStorage } from 'react';
+import React, { useState, useContext } from 'react';
 import {
 	Button,
 	Flex,
@@ -7,9 +7,11 @@ import {
 	Image,
 	Input
 } from '@chakra-ui/react';
+import UserContext from '../components/UserContext';
 
 const Home = () => {
 	const [fileData, setFileData] = useState(null);
+	const { chatData, analyzeData } = useContext(UserContext);
 
 	const uploadToClient = event => {
 		if (event.target.files && event.target.files[0]) {
@@ -27,7 +29,7 @@ const Home = () => {
 				body
 			})
 				.then(res => res.json())
-				.then(data => console.log(data));
+				.then(data => analyzeData(data));
 		} else {
 			alert('파일을 선택하세요.');
 		}
