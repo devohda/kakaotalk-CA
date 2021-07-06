@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useLocalStorage } from 'react';
 import {
 	Button,
 	Flex,
@@ -53,8 +53,9 @@ const Home = () => {
 					<Flex
 						w="80%"
 						h="40vh"
-						backgroundColor="#fafafa"
+						backgroundColor="#fff"
 						borderRadius={5}
+						boxShadow="0px 0px 20px 2px #dbdbdb"
 					>
 						<Flex
 							w="100%"
@@ -65,7 +66,7 @@ const Home = () => {
 							<FormControl
 								w="70%"
 								h="5vh"
-								mb="1vh"
+								mb="1.5vh"
 								alignSelf="center"
 							>
 								<Flex w="100%" h="100%">
@@ -85,7 +86,7 @@ const Home = () => {
 								w="70%"
 								h="5vh"
 								lineHeight="5vh"
-								mt="1vh"
+								mt="1.5vh"
 								textAlign="center"
 								alignSelf="center"
 								onClick={uploadToServer}

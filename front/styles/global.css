@@ -35,8 +35,11 @@ a {
 
 * {
     box-sizing: border-box;
-    box-shadow: none !important;
     font-family: NanumBarunGothic, sans-serif !important;
+}
+
+button {
+    box-shadow: none !important;
 }
 
 /*page/analyze*/
@@ -85,8 +88,7 @@ a {
     word-wrap : normal !important;
     background-color: #F7E600;
     border-radius: 5px;
-    text-align : center;
-    padding-left : 7px;
+    text-align : center !important;
 }
 .talk-data:hover{
     transition-duration: 0.1s;
