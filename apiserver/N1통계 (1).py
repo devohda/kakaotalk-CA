@@ -26,12 +26,12 @@ df_month = df_month[["year_month","Message"]] #df_month를 시각화하면 됩�
 #2. 우리는 24시간중 언제 대화를 많이 할까?
 
 def time_24(t):
-    time = {"밤":[22,23,0,1],"새벽":[2,3,4,5],"오전":[6,7,8,9],"낮":[10,11,12,13],
+    ime = {"밤":[22,23,0,1],"새벽":[2,3,4,5],"오전":[6,7,8,9],"낮":[10,11,12,13], 
         "오후":[14,15,16,17],"저녁":[18,19,20,21]}
     for when, hour in time.items():
         if t in hour:
         break
-    return when
+    return when       
 
 data["date"] = data.Date.str[:10]
 data["hour"] = data.Date.str[11:13].astype(int)

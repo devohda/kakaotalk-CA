@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
-      <change afterPath="$PROJECT_DIR$/apiserver/N2_preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/apiserver/N3wordcloud.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apiserver/N1통계 (1).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apiserver/temp.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pages/dashboard/home2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/smartphone.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/N1통계.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/N1통계.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiserver/dlkalsdkfj.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/N1통계.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/api/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +37,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="JupyterTrust" id="57809706-02a9-4d50-9aaf-6d2c003c0aad" />
   <component name="ProjectId" id="1uKw3ignHelIDLiWj8SJV9LonhZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,19 +52,24 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apiserver" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apiserver/app.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="E:\WebstormProjects\kakaotalk-CA\front\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
     <property name="ts.external.directory.path" value="E:\Program Files (x86)\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/apiserver/app.py" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -70,8 +78,8 @@
       <recent name="E:\WebstormProjects\kakaotalk-CA\front\src\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\WebstormProjects\kakaotalk-CA\front\pages\dashboard2" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\front\public" />
+      <recent name="E:\WebstormProjects\kakaotalk-CA\front\pages\dashboard2" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\front\styles" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\chakra-nextjs-dashboard\public" />
     </key>
@@ -112,7 +120,12 @@
       <workItem from="1625259832633" duration="1402000" />
       <workItem from="1625305317786" duration="16255000" />
       <workItem from="1625481461522" duration="5070000" />
-      <workItem from="1625512846384" duration="10513000" />
+      <workItem from="1625512846384" duration="11625000" />
+      <workItem from="1625532558177" duration="1350000" />
+      <workItem from="1625534074922" duration="10000" />
+      <workItem from="1625534363202" duration="1328000" />
+      <workItem from="1625555836902" duration="367000" />
+      <workItem from="1625556222469" duration="4166000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>

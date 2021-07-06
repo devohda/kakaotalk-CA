@@ -132,7 +132,7 @@ const post = async (req, res) => {
 		const jsonData = await convertFile(files.file);
 
 		const result = await axios.post(
-			'http://localhost:5000/hello',
+			'http://localhost:5000/analyze',
 			jsonData
 		);
 		console.log(result.data);
