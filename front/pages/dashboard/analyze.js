@@ -2,51 +2,39 @@ import React, { useState } from 'react';
 import {
 	Flex,
 	Heading,
-	Avatar,
-	AvatarGroup,
 	Text,
-	Icon,
-	IconButton,
-	Table,
-	Thead,
-	Tbody,
-	Tr,
-	Th,
-	Td,
-	Divider,
-	Link,
-	Box,
 	Button,
 	Input,
-	InputGroup,
-	InputLeftElement,
 	FormControl,
 	FormLabel
 } from '@chakra-ui/react';
-import { FiHome, FiBarChart, FiPieChart, FiBarChart2 } from 'react-icons/fi';
 import MyChart from '../../components/MyChart';
 import MyChart2 from '../../components/MyChart2';
 import MyChart3 from '../../components/MyChart3';
 import MyChart4 from '../../components/MyChart4';
 import Navigation from '../../components/Navigation';
 
-const Analyze = () => {
-	const [file, setFile] = useState(null);
+const Dashboard = () => {
+	const [fileData, setFileData] = useState(null);
 
 	const uploadToClient = event => {
 		if (event.target.files && event.target.files[0]) {
 			const i = event.target.files[0];
-			setFile(i);
+			setFileData(i);
 		}
 	};
 
 	const uploadToServer = async event => {
-		const body = new FormData();
-		body.append('file', file);
-		const response = await fetch('/api/file', {
-			method: 'POST',
-			body
-		});
+		if (fileData) {
+			const body = new FormData();
+			body.append('file', fileData);
+			const response = await fetch('/api/file', {
+				method: 'POST',
+				body
+			});
+		} else {
+			alert('파일을 선택하세요.');
+		}
 	};
 
 	return (
@@ -63,7 +51,7 @@ const Analyze = () => {
 				minH="100vh"
 			>
 				<Heading fontWeight="normal" mb={4} letterSpacing="tight">
-					Welcome back,
+					Welcome back,{' '}
 					<Flex fontWeight="bold" display="inline-flex">
 						Dahye
 					</Flex>
@@ -85,8 +73,8 @@ const Analyze = () => {
 							textAlign="center"
 							alignSelf="center"
 						>
-							{file != null
-								? file.name
+							{fileData != null
+								? fileData.name
 								: '카카오톡 대화 파일 업로드 (.txt, .csv)'}
 						</FormLabel>
 						<Input
@@ -152,4 +140,4 @@ const Analyze = () => {
 	);
 };
 
-export default Analyze;
+export default Dashboard;
