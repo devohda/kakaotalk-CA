@@ -69,15 +69,15 @@ a {
 }
 
 .talk-data{
-    background-color: #fdc573;
+    background-color: #F7E600;
     border-radius: 5px;
 }
 .talk-data:hover{
     transition-duration: 0.1s;
-    background-color: #f4bf6f;
+    background-color: #ecdc01;
     cursor: pointer;
 }
 .talk-data:active{
     transition-duration: 0.1s;
-    background-color: #e5b56a
+    background-color: #e1d201
 }
