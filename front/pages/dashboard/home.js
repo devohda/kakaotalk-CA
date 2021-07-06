@@ -18,14 +18,16 @@ const Home = () => {
 		}
 	};
 
-	const uploadToServer = async event => {
+	const uploadToServer = event => {
 		if (fileData) {
 			const body = new FormData();
 			body.append('file', fileData);
-			const response = await fetch('/api/file', {
+			fetch('/api/file', {
 				method: 'POST',
 				body
-			});
+			})
+				.then(res => res.json())
+				.then(data => console.log(data));
 		} else {
 			alert('파일을 선택하세요.');
 		}

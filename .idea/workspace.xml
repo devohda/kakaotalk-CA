@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/analyze.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/analyze.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/api/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/dashboard/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/home2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +121,7 @@
       <workItem from="1625534074922" duration="10000" />
       <workItem from="1625534363202" duration="1328000" />
       <workItem from="1625555836902" duration="367000" />
-      <workItem from="1625556222469" duration="11314000" />
+      <workItem from="1625556222469" duration="13578000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>
