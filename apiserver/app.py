@@ -21,6 +21,8 @@ class AnalyzingText(Resource):
         parsed_request = request.get_json()
 
         data = pd.DataFrame(parsed_request)
+        #pd.set_option('display.max_rows', data.shape[0]+1)
+        #print(data)
 
         #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
         total_text = len(data)

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Flex, Heading, Text } from '@chakra-ui/react';
-import MyChart from '../../components/MyChart';
-import MyChart2 from '../../components/MyChart2';
-import MyChart3 from '../../components/MyChart3';
-import MyChart4 from '../../components/MyChart4';
+import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
+import UserContext from '../../components/UserContext';
 
 const ChatReport = () => {
 	const [fileData, setFileData] = useState(null);
-
+	const { chatData, resetData } = useContext(UserContext);
+	const { total_text, firstDate, lastDate, df_user, df_month, df_hour } =
+		chatData;
 	const uploadToClient = event => {
 		if (event.target.files && event.target.files[0]) {
 			const i = event.target.files[0];
@@ -56,7 +56,7 @@ const ChatReport = () => {
 					<Text marginY="2vh" fontSize="2xl">
 						📅 2021년 동안 주고 받은 카톡 횟수
 					</Text>
-					<MyChart />
+					<LineChart data={{ df_month }} />
 				</Flex>
 			</Flex>
 
@@ -74,7 +74,10 @@ const ChatReport = () => {
 					<Text marginY="2vh" fontSize="2xl">
 						⏱ 시간대별 카톡 주고 받은 횟수
 					</Text>
-					<MyChart />
+					<LineChart
+						labels={Object.values(df_month.year_month)}
+						data={Object.values(df_month.Message)}
+					/>
 				</Flex>
 			</Flex>
 		</Flex>

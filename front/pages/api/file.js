@@ -135,7 +135,7 @@ const post = async (req, res) => {
 			'http://localhost:5000/analyze',
 			jsonData
 		);
-		console.log(jsonData);
+		console.dir(result.data);
 		return res.send(result.data);
 	});
 };
