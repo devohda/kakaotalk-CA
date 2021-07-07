@@ -35,6 +35,8 @@ const options = {
 	}
 };
 
-const LineChart = () => <Line data={data} options={options} />;
+const LineChart = props => {
+	return <Line data={data} options={options} />;
+};
 
 export default LineChart;

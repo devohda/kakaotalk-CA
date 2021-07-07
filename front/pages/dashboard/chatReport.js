@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-import {
-	Flex,
-	Heading,
-	Text,
-	Button,
-	Input,
-	FormControl,
-	FormLabel
-} from '@chakra-ui/react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
 import MyChart from '../../components/MyChart';
 import MyChart2 from '../../components/MyChart2';
 import MyChart3 from '../../components/MyChart3';
@@ -44,7 +36,7 @@ const ChatReport = () => {
 
 			{/*column 2*/}
 			<Flex
-				w="41%"
+				w="42%"
 				p="3%"
 				flexDir="column"
 				overflow="auto"
@@ -71,7 +63,7 @@ const ChatReport = () => {
 			{/*column 3*/}
 			<Flex
 				flexDir="column"
-				w="41%"
+				w="42%"
 				bg="#f5f5f5"
 				p="3%"
 				overflow="auto"

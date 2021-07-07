@@ -16,7 +16,6 @@ class MyApp extends App {
 			this.setState({
 				chatData
 			});
-			Router.push('/dashboard/chatReport');
 		} else {
 			Router.push('/home');
 		}

@@ -44,7 +44,7 @@ const Emotion = () => {
 
 			{/*column 2*/}
 			<Flex
-				w="41%"
+				w="42%"
 				p="3%"
 				flexDir="column"
 				overflow="auto"
@@ -71,7 +71,7 @@ const Emotion = () => {
 			{/*column 3*/}
 			<Flex
 				flexDir="column"
-				w="41%"
+				w="42%"
 				bg="#f5f5f5"
 				p="3%"
 				overflow="auto"
