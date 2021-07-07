@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Flex, Text, Image, Button, Icon } from '@chakra-ui/react';
 import { FiBarChart, FiBarChart2, FiHome, FiPieChart } from 'react-icons/fi';
-import Sidebar from './SidebarItems';
+import SidebarItems from './SidebarItems';
 import UserContext from './UserContext';
 
 const Navigation = () => {
@@ -18,25 +18,25 @@ const Navigation = () => {
 						align="flex-start"
 						justifyContent="center"
 					>
-						<Sidebar
+						<SidebarItems
 							link="/dashboard/chatReport"
 							icon={FiHome}
 							title="우리의 채팅 통계"
 							active={true}
 						/>
-						<Sidebar
+						<SidebarItems
 							link="/dashboard/commonWords"
 							icon={FiBarChart}
 							title="우리가 주로 사용하는 말"
 							active={false}
 						/>
-						<Sidebar
+						<SidebarItems
 							link="/dashboard/loveCalc"
 							icon={FiBarChart2}
 							title="우리의 애정 척도"
 							active={false}
 						/>
-						<Sidebar
+						<SidebarItems
 							link="/dashboard/emotion"
 							icon={FiPieChart}
 							title="기분에 따라 사용하는 단어"

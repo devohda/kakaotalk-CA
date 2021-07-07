@@ -5,13 +5,13 @@ import Router from 'next/router';
 import { ChakraProvider } from '@chakra-ui/react';
 import UserContext from '../components/UserContext';
 
-class MyApp extends App {
+export default class MyApp extends App {
 	state = {
 		chatData: null
 	};
 
 	componentDidMount = () => {
-		const chatData = localStorage.getItem('chatData');
+		const chatData = localStorage.getItem('chat-data');
 		if (chatData) {
 			this.setState({
 				chatData
@@ -21,24 +21,17 @@ class MyApp extends App {
 		}
 	};
 
-	analyzeData = chatData => {
-		localStorage.setItem('chatData', chatData);
+	analyzeData = data => {
+		localStorage.setItem('chat-data', data);
 
-		this.setState(
-			{
-				chatData
-			},
-			() => {
-				Router.push('/dashboard/chatReport');
-			}
-		);
+		this.setState({ chatData: data });
+		console.log('data is exist!');
+		Router.push('/dashboard/chatReport');
 	};
 
 	resetData = () => {
-		localStorage.removeItem('chatData');
-		this.setState({
-			chatData: null
-		});
+		localStorage.removeItem('chat-data');
+		this.setState({ chatData: null });
 		Router.push('/home');
 	};
 
@@ -46,19 +39,17 @@ class MyApp extends App {
 		const { Component, pageProps } = this.props;
 
 		return (
-			<UserContext.Provider
-				value={{
-					chatData: this.state.chatData,
-					analyzeData: this.analyzeData,
-					resetData: this.resetData
-				}}
-			>
-				<ChakraProvider>
+			<ChakraProvider>
+				<UserContext.Provider
+					value={{
+						chatData: this.state.chatData,
+						analyzeData: this.analyzeData,
+						resetData: this.resetData
+					}}
+				>
 					<Component {...pageProps} />
-				</ChakraProvider>
-			</UserContext.Provider>
+				</UserContext.Provider>
+			</ChakraProvider>
 		);
 	}
 }
-
-export default MyApp;

@@ -1,14 +1,32 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
+import axios from 'axios';
+import Router from 'next/router';
 
-const ChatReport = () => {
+const CommonWords = () => {
 	const [fileData, setFileData] = useState(null);
 	const { chatData, resetData } = useContext(UserContext);
-	const { total_text, firstDate, lastDate, df_user, df_month, df_hour } =
-		chatData;
+
+	const [name1, setName1] = useState('');
+	const [name2, setName2] = useState('');
+
+	useEffect(() => {
+		if (!chatData) {
+			console.log('chatData is not exist');
+		} else if (!name1 && !name2 && chatData !== null) {
+			axios.post('/api/commonWords', chatData)
+				.then(res => {
+					const data = res.data;
+					const users = Object.keys(data.df_user);
+					setName1(users[0]);
+					setName2(users[1]);
+				})
+				.catch(err => console.log(err));
+		}
+	});
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
@@ -31,13 +49,7 @@ const ChatReport = () => {
 					>
 						우리의 채팅 통계
 					</Heading>
-				</Flex>
-
-				<Flex flexDir="column" mt={100} mb={100}>
-					<Text marginY="2vh" fontSize="2xl">
-						📅 2021년 동안 주고 받은 카톡 횟수
-					</Text>
-					<LineChart data={{ df_month }} />
+					{name1 && <Flex>{name1}</Flex>}
 				</Flex>
 			</Flex>
 
@@ -51,18 +63,10 @@ const ChatReport = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				<Flex flexDir="column" mt={100} mb={100}>
-					<Text marginY="2vh" fontSize="2xl">
-						⏱ 시간대별 카톡 주고 받은 횟수
-					</Text>
-					<LineChart
-						labels={Object.values(df_month.year_month)}
-						data={Object.values(df_month.Message)}
-					/>
-				</Flex>
+				{name2 && <Flex>{name2}</Flex>}
 			</Flex>
 		</Flex>
 	);
 };
 
-export default ChatReport;
+export default CommonWords;

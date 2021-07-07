@@ -14,15 +14,13 @@ def time_24(t):
             break
     return when
 
-@api.route('/analyze')  # 데코레이터 이용, '/hello' 경로에 클래스 등록
-class AnalyzingText(Resource):
+@api.route('/chatReport')
+class ChatReport(Resource):
     def post(self):
         #requset는 json 형태로 반환됨
         parsed_request = request.get_json()
 
         data = pd.DataFrame(parsed_request)
-        #pd.set_option('display.max_rows', data.shape[0]+1)
-        #print(data)
 
         #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
         total_text = len(data)
@@ -58,7 +56,27 @@ class AnalyzingText(Resource):
          "df_hour" : df_hour
         }
 
+@api.route('/commonWords')
+class CommonWords(Resource):
+    def post(self):
+        parsed_request = request.get_json()
+        print(parsed_request)
 
+        data = pd.DataFrame(parsed_request)
+
+        #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
+        total_text = len(data)
+
+        #0-1. 파일내 대화시작날짜, 대화 마지막 날짜 ->따로 화면에 띄워줄 예정
+        firstDate = data.Date[0]
+        lastDate = data.Date[total_text-1]
+
+        #0-2. 사용자별로 대화 개수 -> 따로 화면에 띄워줄 예정
+        df_user = data.groupby("User")["Message"].count().to_dict()
+
+        return {
+         "df_user" : df_user
+        }
 
 @api.route('/total-text')
 class TotalText(Resource):

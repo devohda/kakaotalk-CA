@@ -62,6 +62,7 @@ button {
 .sidebar-items{
     color : #777;
     font-size: large;
+    cursor: pointer;
 }
 
 .sidebar-items p{

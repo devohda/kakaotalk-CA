@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
+      <change afterPath="$PROJECT_DIR$/apiserver/N2_preprocessing (1).py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apiserver/N3wordcloud (1).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/LineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/SidebarItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/SidebarItems.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/styles/global.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +57,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apiserver/app.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/apiserver" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />

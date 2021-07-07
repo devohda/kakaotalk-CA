@@ -11,7 +11,7 @@ import UserContext from '../components/UserContext';
 
 const Home = () => {
 	const [fileData, setFileData] = useState(null);
-	const { chatData, analyzeData } = useContext(UserContext);
+	const { analyzeData } = useContext(UserContext);
 
 	const uploadToClient = event => {
 		if (event.target.files && event.target.files[0]) {
