@@ -16,11 +16,13 @@ const ChatReport = () => {
 	useEffect(() => {
 		if (!chatData) {
 			Router.push('/home');
-		}
-		if (!dfMonth && !dfHour && chatData) {
+		} else if (!dfMonth && !dfHour && chatData) {
 			axios.post('/api/analyze', chatData)
 				.then(res => {
-					console.log(res);
+					const data = res.data;
+					console.log(data);
+					setDfMonth(data.df_month);
+					setDfHour(data.df_hour);
 				})
 				.catch(err => console.error(err));
 		}
@@ -77,8 +79,8 @@ const ChatReport = () => {
 							⏱ 시간대별 카톡 주고 받은 횟수
 						</Text>
 						<LineChart
-							labels={Object.values(dfHour.year_month)}
-							data={Object.values(dfHour.Message)}
+							labels={Object.keys(dfHour)}
+							data={Object.values(dfHour)}
 						/>
 					</Flex>
 				)}

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
-      <change afterPath="$PROJECT_DIR$/front/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/LineChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/LineChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/index.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

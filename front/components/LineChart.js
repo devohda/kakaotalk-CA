@@ -37,7 +37,6 @@ const LineChart = props => {
 	useEffect(() => {
 		chartData.labels = props.labels;
 		chartData.datasets[0].data = props.data;
-		console.log(props.data);
 	});
 	return <Line data={chartData} options={options} />;
 };

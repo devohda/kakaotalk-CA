@@ -4,6 +4,10 @@ module.exports = {
 			{
 				source: '/api/analyze',
 				destination: 'http://localhost:5000/analyze'
+			},
+			{
+				source: '/',
+				destination: '/home'
 			}
 		];
 	}
