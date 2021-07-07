@@ -14,7 +14,7 @@ import MyChart3 from '../../components/MyChart3';
 import MyChart4 from '../../components/MyChart4';
 import Navigation from '../../components/Navigation';
 
-const Dashboard = () => {
+const ChatReport = () => {
 	const [fileData, setFileData] = useState(null);
 
 	const uploadToClient = event => {
@@ -89,4 +89,4 @@ const Dashboard = () => {
 	);
 };
 
-export default Dashboard;
+export default ChatReport;
