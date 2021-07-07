@@ -1,7 +1,22 @@
 from flask import Flask, request  # 서버 구현을 위한 Flask 객체 import
 from flask_restx import Api, Resource  # Api 구현을 위한 Api 객체 import
+
+import os
+import sys
+import re
+
 import numpy as np
 import pandas as pd
+
+import json
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set(style='white', context='notebook', palette='deep')
+
+from collections import Counter
+from wordcloud import WordCloud #워드클라우드 시각화
+
 
 app = Flask(__name__)  # Flask 객체 선언, 파라미터로 어플리케이션 패키지의 이름을 넣어줌.
 api = Api(app)  # Flask 객체에 Api 객체 등록
@@ -19,7 +34,6 @@ class ChatReport(Resource):
     def post(self):
         #requset는 json 형태로 반환됨
         parsed_request = request.get_json()
-
         data = pd.DataFrame(parsed_request)
 
         #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
@@ -56,12 +70,11 @@ class ChatReport(Resource):
          "df_hour" : df_hour
         }
 
+
 @api.route('/commonWords')
 class CommonWords(Resource):
     def post(self):
         parsed_request = request.get_json()
-        print(parsed_request)
-
         data = pd.DataFrame(parsed_request)
 
         #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정

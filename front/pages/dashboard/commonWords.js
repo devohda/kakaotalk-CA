@@ -14,9 +14,7 @@ const CommonWords = () => {
 	const [name2, setName2] = useState('');
 
 	useEffect(() => {
-		if (!chatData) {
-			console.log('chatData is not exist');
-		} else if (!name1 && !name2 && chatData !== null) {
+		if (!name1 && !name2 && chatData !== null) {
 			axios.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
@@ -47,10 +45,25 @@ const CommonWords = () => {
 						mb={4}
 						letterSpacing="tight"
 					>
-						우리의 채팅 통계
+						우리가 주로 사용하는 말
 					</Heading>
-					{name1 && <Flex>{name1}</Flex>}
 				</Flex>
+				{name1 && (
+					<Flex>
+						<Flex
+							flexDir="rows"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								👧 {name1}
+							</Text>
+							<Text>님</Text>
+						</Flex>
+					</Flex>
+				)}
 			</Flex>
 
 			{/*column 3*/}
@@ -63,7 +76,22 @@ const CommonWords = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				{name2 && <Flex>{name2}</Flex>}
+				{name2 && (
+					<Flex>
+						<Flex
+							flexDir="rows"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								👦 {name2}
+							</Text>
+							<Text>님</Text>
+						</Flex>
+					</Flex>
+				)}
 			</Flex>
 		</Flex>
 	);
