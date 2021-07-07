@@ -1,41 +1,14 @@
-import React, { useState } from 'react';
-import {
-	Flex,
-	Heading,
-	Text,
-	Button,
-	Input,
-	FormControl,
-	FormLabel
-} from '@chakra-ui/react';
-import MyChart from '../../components/MyChart';
-import MyChart2 from '../../components/MyChart2';
-import MyChart3 from '../../components/MyChart3';
-import MyChart4 from '../../components/MyChart4';
+import React, { useState, useContext } from 'react';
+import { Flex, Heading, Text } from '@chakra-ui/react';
+import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
+import UserContext from '../../components/UserContext';
 
-const Emotion = () => {
+const ChatReport = () => {
 	const [fileData, setFileData] = useState(null);
-
-	const uploadToClient = event => {
-		if (event.target.files && event.target.files[0]) {
-			const i = event.target.files[0];
-			setFileData(i);
-		}
-	};
-
-	const uploadToServer = async event => {
-		if (fileData) {
-			const body = new FormData();
-			body.append('file', fileData);
-			const response = await fetch('/api/file', {
-				method: 'POST',
-				body
-			});
-		} else {
-			alert('파일을 선택하세요.');
-		}
-	};
+	const { chatData, resetData } = useContext(UserContext);
+	const { total_text, firstDate, lastDate, df_user, df_month, df_hour } =
+		chatData;
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
@@ -64,7 +37,7 @@ const Emotion = () => {
 					<Text marginY="2vh" fontSize="2xl">
 						📅 2021년 동안 주고 받은 카톡 횟수
 					</Text>
-					<MyChart />
+					<LineChart data={{ df_month }} />
 				</Flex>
 			</Flex>
 
@@ -82,11 +55,14 @@ const Emotion = () => {
 					<Text marginY="2vh" fontSize="2xl">
 						⏱ 시간대별 카톡 주고 받은 횟수
 					</Text>
-					<MyChart />
+					<LineChart
+						labels={Object.values(df_month.year_month)}
+						data={Object.values(df_month.Message)}
+					/>
 				</Flex>
 			</Flex>
 		</Flex>
 	);
 };
 
-export default Emotion;
+export default ChatReport;

@@ -1,33 +1,30 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Flex, Heading, Text } from '@chakra-ui/react';
 import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
+import axios from 'axios';
+import Router from 'next/router';
 
 const ChatReport = () => {
 	const [fileData, setFileData] = useState(null);
 	const { chatData, resetData } = useContext(UserContext);
-	const { total_text, firstDate, lastDate, df_user, df_month, df_hour } =
-		chatData;
-	const uploadToClient = event => {
-		if (event.target.files && event.target.files[0]) {
-			const i = event.target.files[0];
-			setFileData(i);
-		}
-	};
 
-	const uploadToServer = async event => {
-		if (fileData) {
-			const body = new FormData();
-			body.append('file', fileData);
-			const response = await fetch('/api/file', {
-				method: 'POST',
-				body
-			});
-		} else {
-			alert('파일을 선택하세요.');
+	const [dfMonth, setDfMonth] = useState(null);
+	const [dfHour, setDfHour] = useState(null);
+
+	useEffect(() => {
+		if (!chatData) {
+			Router.push('/home');
 		}
-	};
+		if (!dfMonth && !dfHour) {
+			axios.post('http://localhost:5000/analyze', chatData)
+				.then(res => {
+					console.log(res);
+				})
+				.catch(err => console.error(err));
+		}
+	});
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
@@ -51,13 +48,17 @@ const ChatReport = () => {
 						우리의 채팅 통계
 					</Heading>
 				</Flex>
-
-				<Flex flexDir="column" mt={100} mb={100}>
-					<Text marginY="2vh" fontSize="2xl">
-						📅 2021년 동안 주고 받은 카톡 횟수
-					</Text>
-					<LineChart data={{ df_month }} />
-				</Flex>
+				{dfMonth !== null && (
+					<Flex flexDir="column" mt={100} mb={100}>
+						<Text marginY="2vh" fontSize="2xl">
+							📅 2021년 동안 주고 받은 카톡 횟수
+						</Text>
+						<LineChart
+							labels={Object.values(dfMonth.year_month)}
+							data={Object.values(dfMonth.Message)}
+						/>
+					</Flex>
+				)}
 			</Flex>
 
 			{/*column 3*/}
@@ -70,15 +71,17 @@ const ChatReport = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				<Flex flexDir="column" mt={100} mb={100}>
-					<Text marginY="2vh" fontSize="2xl">
-						⏱ 시간대별 카톡 주고 받은 횟수
-					</Text>
-					<LineChart
-						labels={Object.values(df_month.year_month)}
-						data={Object.values(df_month.Message)}
-					/>
-				</Flex>
+				{dfHour !== null && (
+					<Flex flexDir="column" mt={100} mb={100}>
+						<Text marginY="2vh" fontSize="2xl">
+							⏱ 시간대별 카톡 주고 받은 횟수
+						</Text>
+						<LineChart
+							labels={Object.values(dfHour.year_month)}
+							data={Object.values(dfHour.Message)}
+						/>
+					</Flex>
+				)}
 			</Flex>
 		</Flex>
 	);
