@@ -7,14 +7,15 @@ import axios from 'axios';
 import Router from 'next/router';
 
 const ChatReport = () => {
-	const [fileData, setFileData] = useState(null);
-	const { chatData, resetData } = useContext(UserContext);
+	const { chatData } = useContext(UserContext);
 
 	const [dfMonth, setDfMonth] = useState(null);
 	const [dfHour, setDfHour] = useState(null);
 
 	useEffect(() => {
-		if (!dfMonth && !dfHour && chatData !== null) {
+		if (chatData === null) {
+			Router.push('/home');
+		} else if (!dfMonth && !dfHour && chatData !== null) {
 			axios.post('/api/chatReport', chatData)
 				.then(res => {
 					const data = res.data;

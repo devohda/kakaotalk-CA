@@ -1,21 +1,18 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { Flex, Heading, Text } from '@chakra-ui/react';
-import LineChart from '../../components/LineChart';
+import { Flex, Heading } from '@chakra-ui/react';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
-import Router from 'next/router';
 
 const Emotion = () => {
-	const [fileData, setFileData] = useState(null);
-	const { chatData, resetData } = useContext(UserContext);
+	const { chatData } = useContext(UserContext);
 
 	const [name1, setName1] = useState('');
 	const [name2, setName2] = useState('');
 
 	useEffect(() => {
 		if (!name1 && !name2 && chatData !== null) {
-			axios.post('/api/commonWords', chatData)
+			axios.post('/api/emotion', chatData)
 				.then(res => {
 					const data = res.data;
 					const users = Object.keys(data.df_user);
