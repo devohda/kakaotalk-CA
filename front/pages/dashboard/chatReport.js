@@ -17,8 +17,8 @@ const ChatReport = () => {
 		if (!chatData) {
 			Router.push('/home');
 		}
-		if (!dfMonth && !dfHour) {
-			axios.post('http://localhost:5000/analyze', chatData)
+		if (!dfMonth && !dfHour && chatData) {
+			axios.post('/api/analyze', chatData)
 				.then(res => {
 					console.log(res);
 				})
