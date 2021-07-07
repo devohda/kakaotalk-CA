@@ -16,7 +16,7 @@ class MyApp extends App {
 			this.setState({
 				chatData
 			});
-			Router.push('/dashboard/analyze');
+			Router.push('/dashboard/chatReport');
 		} else {
 			Router.push('/home');
 		}
@@ -30,7 +30,7 @@ class MyApp extends App {
 				chatData
 			},
 			() => {
-				Router.push('/dashboard/analyze');
+				Router.push('/dashboard/chatReport');
 			}
 		);
 	};

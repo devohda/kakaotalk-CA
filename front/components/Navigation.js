@@ -1,72 +1,42 @@
-import { Avatar, Flex, Heading, Icon, Link, Text } from '@chakra-ui/react';
+import { Avatar, Flex, Text, Image } from '@chakra-ui/react';
 import { FiBarChart, FiBarChart2, FiHome, FiPieChart } from 'react-icons/fi';
-
+import Sidebar from './SidebarItems';
 const Navigation = () => (
-	<Flex
-		w="15%"
-		flexDir="column"
-		alignItems="center"
-		backgroundColor="#F6B352"
-		color="#fff"
-	>
+	<Flex className="nav-container">
 		<Flex flexDir="column" justifyContent="space-between" h="100vh">
-			<Flex flexDir="column" as="nav">
-				<Heading mt={50} mb={100} fontSize="4xl" alignSelf="center">
-					Talk Traker.
-				</Heading>
+			<Flex flexDir="column" as="nav" alignItems="center">
+				<Flex w="50%" mt="4vh" mb="16vh">
+					<Image src="/logo.png" />
+				</Flex>
 				<Flex
 					flexDir="column"
 					align="flex-start"
 					justifyContent="center"
 				>
-					<Flex className="sidebar-items">
-						<Link href="/dashboard/home">
-							<Icon
-								as={FiHome}
-								fontSize="2xl"
-								className="active-icon"
-							/>
-						</Link>
-						<Link
-							href="/dashboard/home"
-							_hover={{ textDecor: 'none' }}
-						>
-							<Text className="active">Home</Text>
-						</Link>
-					</Flex>
-					<Flex className="sidebar-items">
-						<Link href="/dashboard/analyze">
-							<Icon as={FiBarChart} fontSize="2xl" />
-						</Link>
-						<Link
-							href="/dashboard/analyze"
-							_hover={{ textDecor: 'none' }}
-						>
-							<Text>analyze1</Text>
-						</Link>
-					</Flex>
-					<Flex className="sidebar-items">
-						<Link href="/dashboard/analyze">
-							<Icon as={FiBarChart2} fontSize="2xl" />
-						</Link>
-						<Link
-							href="/dashboard/analyze"
-							_hover={{ textDecor: 'none' }}
-						>
-							<Text>analyze2</Text>
-						</Link>
-					</Flex>
-					<Flex className="sidebar-items">
-						<Link href="/dashboard/analyze">
-							<Icon as={FiPieChart} fontSize="2xl" />
-						</Link>
-						<Link
-							href="/dashboard/analyze"
-							_hover={{ textDecor: 'none' }}
-						>
-							<Text>analyze3</Text>
-						</Link>
-					</Flex>
+					<Sidebar
+						link="/dashboard/chatReport"
+						icon={FiHome}
+						title="우리의 채팅 통계"
+						active={true}
+					/>
+					<Sidebar
+						link="/dashboard/commonWords"
+						icon={FiBarChart}
+						title="우리가 주로 사용하는 말"
+						active={false}
+					/>
+					<Sidebar
+						link="/dashboard/loveCalc"
+						icon={FiBarChart2}
+						title="우리의 애정 척도"
+						active={false}
+					/>
+					<Sidebar
+						link="/dashboard/emotion"
+						icon={FiPieChart}
+						title="기분에 따라 사용하는 단어"
+						active={false}
+					/>
 				</Flex>
 			</Flex>
 			<Flex flexDir="column" alignItems="center" mb={10} mt={5}>
