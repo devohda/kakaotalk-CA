@@ -21,6 +21,17 @@ export default class MyApp extends App {
 		}
 	};
 
+	loadData = () => {
+		const chatData = localStorage.getItem('chat-data');
+		if (chatData) {
+			this.setState({
+				chatData
+			});
+		} else {
+			Router.push('/home');
+		}
+	};
+
 	analyzeData = data => {
 		localStorage.setItem('chat-data', data);
 
@@ -44,7 +55,8 @@ export default class MyApp extends App {
 					value={{
 						chatData: this.state.chatData,
 						analyzeData: this.analyzeData,
-						resetData: this.resetData
+						resetData: this.resetData,
+						loadData: this.loadData
 					}}
 				>
 					<Component {...pageProps} />

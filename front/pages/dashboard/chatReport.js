@@ -7,14 +7,14 @@ import axios from 'axios';
 import Router from 'next/router';
 
 const ChatReport = () => {
-	const { chatData } = useContext(UserContext);
+	const { chatData, loadData } = useContext(UserContext);
 
 	const [dfMonth, setDfMonth] = useState(null);
 	const [dfHour, setDfHour] = useState(null);
 
 	useEffect(() => {
 		if (chatData === null) {
-			Router.push('/home');
+			loadData();
 		} else if (!dfMonth && !dfHour && chatData !== null) {
 			axios.post('/api/chatReport', chatData)
 				.then(res => {
@@ -49,11 +49,19 @@ const ChatReport = () => {
 						우리의 채팅 통계
 					</Heading>
 				</Flex>
-				{dfMonth !== null && (
-					<Flex flexDir="column" mt={100} mb={100}>
-						<Text marginY="2vh" fontSize="2xl">
-							📅 2021년 동안 주고 받은 카톡 횟수
-						</Text>
+				{dfMonth && (
+					<Flex flexDir="column">
+						<Flex
+							flexDir="rows"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								📅 2021년 동안 주고 받은 카톡 횟수
+							</Text>
+						</Flex>
 						<LineChart
 							labels={Object.values(dfMonth.year_month)}
 							data={Object.values(dfMonth.Message)}
@@ -73,10 +81,18 @@ const ChatReport = () => {
 			>
 				<Flex h="5vh"></Flex>
 				{dfHour !== null && (
-					<Flex flexDir="column" mt={100} mb={100}>
-						<Text marginY="2vh" fontSize="2xl">
-							⏱ 시간대별 카톡 주고 받은 횟수
-						</Text>
+					<Flex flexDir="column">
+						<Flex
+							flexDir="column"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								⏱ 시간대별 카톡 주고 받은 횟수
+							</Text>
+						</Flex>
 						<LineChart
 							labels={Object.keys(dfHour)}
 							data={Object.values(dfHour)}

@@ -191,7 +191,7 @@ export default class WordCloud extends Component {
 	render() {
 		return (
 			<div>
-				<canvas id="myChart" ref={this.chartRef} />
+				<canvas id="myChart" ref={this.chartRef} height="300vh" />
 			</div>
 		);
 	}

@@ -4,15 +4,22 @@ import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
 
+const width = 400;
+const height = 400;
+
+import HorizontalBar from '../../components/HorizontalBar';
+
 const LoveCalc = () => {
-	const { chatData } = useContext(UserContext);
+	const { chatData, loadData } = useContext(UserContext);
 
 	const [name1, setName1] = useState('');
 	const [name2, setName2] = useState('');
 
 	useEffect(() => {
-		if (!name1 && !name2 && chatData !== null) {
-			axios.post('/api/loveCalc', chatData)
+		if (chatData === null) {
+			loadData();
+		} else if (!name1 && !name2 && chatData !== null) {
+			axios.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
 					const users = Object.keys(data.df_user);
@@ -44,8 +51,24 @@ const LoveCalc = () => {
 					>
 						우리가 주로 사용하는 말
 					</Heading>
-					{name1 && <Flex>{name1}</Flex>}
 				</Flex>
+				{name1 && (
+					<Flex flexDir="column">
+						<Flex
+							flexDir="rows"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								👧 {name1}
+							</Text>
+							<Text>님</Text>
+						</Flex>
+						<HorizontalBar />
+					</Flex>
+				)}
 			</Flex>
 
 			{/*column 3*/}
@@ -58,7 +81,23 @@ const LoveCalc = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				{name2 && <Flex>{name2}</Flex>}
+				{name2 && (
+					<Flex flexDir="column">
+						<Flex
+							flexDir="rows"
+							mt={100}
+							mb={100}
+							paddingY="2vh"
+							fontSize="2xl"
+						>
+							<Text fontWeight="bold" mr={5}>
+								👦 {name2}
+							</Text>
+							<Text>님</Text>
+						</Flex>
+						<HorizontalBar />
+					</Flex>
+				)}
 			</Flex>
 		</Flex>
 	);

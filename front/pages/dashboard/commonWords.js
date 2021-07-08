@@ -10,13 +10,15 @@ const height = 400;
 import WordCloud from '../../components/WordCloud';
 
 const CommonWords = () => {
-	const { chatData } = useContext(UserContext);
+	const { chatData, loadData } = useContext(UserContext);
 
 	const [name1, setName1] = useState('');
 	const [name2, setName2] = useState('');
 
 	useEffect(() => {
-		if (!name1 && !name2 && chatData !== null) {
+		if (chatData === null) {
+			loadData();
+		} else if (!name1 && !name2 && chatData !== null) {
 			axios.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
@@ -80,7 +82,7 @@ const CommonWords = () => {
 			>
 				<Flex h="5vh"></Flex>
 				{name2 && (
-					<Flex>
+					<Flex flexDir="column">
 						<Flex
 							flexDir="rows"
 							mt={100}
@@ -93,6 +95,7 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
+						<WordCloud />
 					</Flex>
 				)}
 			</Flex>
