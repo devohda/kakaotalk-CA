@@ -125,6 +125,16 @@ class CommonWords(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
+        #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
+        total_text = len(data)
+
+        #0-1. 파일내 대화시작날짜, 대화 마지막 날짜 ->따로 화면에 띄워줄 예정
+        firstDate = data.Date[0]
+        lastDate = data.Date[total_text-1]
+
+        #0-2. 사용자별로 대화 개수 -> 따로 화면에 띄워줄 예정
+        df_user = data.groupby("User")["Message"].count().to_dict()
+
         preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3) #전처리함수, 데이터에서 적용할 컬럼, workers수
         data["preprocessed"] = preprocessed
 
@@ -148,7 +158,10 @@ class CommonWords(Resource):
         counts = Counter(text.split())
         tags = counts.most_common(70)
 
-        return "done"
+        return {
+            "df_user" : df_user,
+            "tags" : tags
+        }
 
 
 if __name__ == "__main__":

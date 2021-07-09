@@ -13,7 +13,10 @@ import WordCloud from '../../components/WordCloud';
 const CommonWords = () => {
 	const { chatData, loadData } = useContext(UserContext);
 
+	const [name1, setName1] = useState('');
+	const [name2, setName2] = useState('');
 	const [words, setWords] = useState(null);
+
 	useEffect(async () => {
 		if (chatData === null) {
 			loadData();
@@ -27,8 +30,10 @@ const CommonWords = () => {
 				.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
-					console.log(data);
-					setWords(data);
+					const users = Object.keys(data.df_user);
+					setName1(users[0]);
+					setName2(users[1]);
+					console.log(data.tags);
 				})
 				.catch(err => console.log(err));
 		}
@@ -56,7 +61,7 @@ const CommonWords = () => {
 						우리가 주로 사용하는 말
 					</Heading>
 				</Flex>
-				{words && (
+				{name1 && (
 					<Flex flexDir="column">
 						<Flex
 							flexDir="rows"
@@ -66,7 +71,7 @@ const CommonWords = () => {
 							fontSize="2xl"
 						>
 							<Text fontWeight="bold" mr={5}>
-								👧 {words}
+								👧 {name1}
 							</Text>
 							<Text>님</Text>
 						</Flex>
@@ -85,7 +90,7 @@ const CommonWords = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				{words && (
+				{name2 && (
 					<Flex flexDir="column">
 						<Flex
 							flexDir="rows"
@@ -95,7 +100,7 @@ const CommonWords = () => {
 							fontSize="2xl"
 						>
 							<Text fontWeight="bold" mr={5}>
-								👦 {words}
+								👦 {name2}
 							</Text>
 							<Text>님</Text>
 						</Flex>
