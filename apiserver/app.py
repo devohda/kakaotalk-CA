@@ -89,11 +89,15 @@ class CommonWords(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
+        print(data)
+
         data.dropna(inplace=True) #결측값 빼기
         data.reset_index(drop=True,inplace=True)
 
         word = []
         tk = Pororo(task="tokenization", lang="ko", model = "word")
+        print(tk)
+
         for i in range(len(data)):
           token= tk(data["preprocessed"][i])
           token = ' '.join(token)
