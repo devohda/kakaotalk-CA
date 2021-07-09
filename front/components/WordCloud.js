@@ -41,7 +41,7 @@ const WordCloud = props => {
 
 	return (
 		<div fontSize={30}>
-			<canvas ref={chartRef} height="300vh" />
+			<canvas id={props.name} ref={chartRef} height="300vh" />
 		</div>
 	);
 };
