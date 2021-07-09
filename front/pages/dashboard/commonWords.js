@@ -52,7 +52,7 @@ const CommonWords = () => {
 						우리가 주로 사용하는 말
 					</Heading>
 				</Flex>
-				{name1 && (
+				{words && (
 					<Flex flexDir="column">
 						<Flex
 							flexDir="rows"
@@ -62,7 +62,7 @@ const CommonWords = () => {
 							fontSize="2xl"
 						>
 							<Text fontWeight="bold" mr={5}>
-								👧 {name1}
+								👧 {words}
 							</Text>
 							<Text>님</Text>
 						</Flex>
@@ -81,7 +81,7 @@ const CommonWords = () => {
 				minH="100vh"
 			>
 				<Flex h="5vh"></Flex>
-				{name2 && (
+				{words && (
 					<Flex flexDir="column">
 						<Flex
 							flexDir="rows"
@@ -91,7 +91,7 @@ const CommonWords = () => {
 							fontSize="2xl"
 						>
 							<Text fontWeight="bold" mr={5}>
-								👦 {name2}
+								👦 {words}
 							</Text>
 							<Text>님</Text>
 						</Flex>
