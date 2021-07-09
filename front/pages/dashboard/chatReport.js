@@ -13,18 +13,14 @@ const ChatReport = () => {
 	const [dfHour, setDfHour] = useState(null);
 
 	useEffect(() => {
-		if (chatData === null) {
-			loadData();
-		} else if (!dfMonth && !dfHour && chatData !== null) {
-			axios.post('/api/chatReport', chatData)
-				.then(res => {
-					const data = res.data;
-					console.log(data);
-					setDfMonth(data.df_month);
-					setDfHour(data.df_hour);
-				})
-				.catch(err => console.log(err));
-		}
+		axios.post('/api/chatReport', chatData)
+			.then(res => {
+				const data = res.data;
+				console.log(data);
+				setDfMonth(data.df_month);
+				setDfHour(data.df_hour);
+			})
+			.catch(err => console.log(err));
 	});
 
 	return (

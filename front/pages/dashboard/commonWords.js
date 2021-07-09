@@ -18,30 +18,26 @@ const CommonWords = () => {
 	const [words, setWords] = useState(null);
 
 	useEffect(async () => {
-		if (chatData === null) {
-			loadData();
-		} else if (!words && chatData !== null) {
-			const instance = await axios.create({
-				url: '/api/commonWords',
-				timeout: 500000
-			});
+		const instance = await axios.create({
+			url: '/api/commonWords',
+			timeout: 500000
+		});
 
-			instance
-				.post('/api/commonWords', chatData)
-				.then(res => {
-					const data = res.data;
-					const users = Object.keys(data.df_user);
-					setName1(users[0]);
-					setName2(users[1]);
+		instance
+			.post('/api/commonWords', chatData)
+			.then(res => {
+				const data = res.data;
+				const users = Object.keys(data.df_user);
+				setName1(users[0]);
+				setName2(users[1]);
 
-					const tags = data.tags;
-					const cloudData = tags.map(tag => {
-						return { key: tag[0], value: tag[1] };
-					});
-					setWords(cloudData);
-				})
-				.catch(err => console.log(err));
-		}
+				const tags = data.tags;
+				const cloudData = tags.map(tag => {
+					return { key: tag[0], value: tag[1] };
+				});
+				setWords(cloudData);
+			})
+			.catch(err => console.log(err));
 	});
 
 	return (
