@@ -2,15 +2,15 @@ import React, { Component, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js';
 import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 
+Chart.register(WordCloudController, WordElement);
+
 const WordCloud = props => {
 	const chartRef = useRef(null);
-
+	const myChartRef = chartRef.current.getContext(props.name);
 	useEffect(() => {
-		const myChartRef = chartRef.current.getContext(props.name);
-
-		Chart.register(WordCloudController, WordElement);
 		new Chart(myChartRef, {
-			type: WordCloudController.id,
+			id: props.name,
+			type: 'wordCloud',
 			data: {
 				labels: props.words.map(d => d.key),
 				datasets: [
