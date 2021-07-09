@@ -125,17 +125,7 @@ class CommonWords(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
-        preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3) #전처리함수, 데이터에서 적용할 컬럼, workers수
-        data["preprocessed"] = preprocessed
-
-        data.dropna(inplace=True) #결측값 빼기
-        data.reset_index(drop=True,inplace=True)
-
-        word = []
-        tk = Pororo(task="tokenization", lang="ko", model = "word")
-
-        return {"word" : ['word']}
-
+        return {"tags": "tags"}
 
 
 if __name__ == "__main__":
