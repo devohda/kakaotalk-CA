@@ -2,7 +2,7 @@ import React, { Component, useEffect, useRef } from 'react';
 import { Chart } from 'chart.js';
 import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 
-export default WordCloud = props => {
+const WordCloud = props => {
 	const chartRef = useRef(null);
 
 	useEffect(() => {
@@ -45,3 +45,5 @@ export default WordCloud = props => {
 		</div>
 	);
 };
+
+export default WordCloud;
