@@ -86,6 +86,9 @@ class ChatReport(Resource):
 @api.route('/commonWords')
 class CommonWords(Resource):
     def post(self):
+        parsed_request = request.get_json()
+        data = pd.DataFrame(parsed_request)
+
         data.dropna(inplace=True) #결측값 빼기
         data.reset_index(drop=True,inplace=True)
 
