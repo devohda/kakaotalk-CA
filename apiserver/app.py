@@ -134,21 +134,8 @@ class CommonWords(Resource):
         word = []
         tk = Pororo(task="tokenization", lang="ko", model = "word")
 
-        for i in range(len(data)):
-          token= tk(data["preprocessed"][i])
-          token = ' '.join(token)
-          word.append(token)
+        return {"word" : ['word']}
 
-        text = ' '.join(word)
-        stopwords = ['ㅋㅋ','ㅋ','는데','에서','해서','거든','어서','이거','거야','했는데','하는','그래','그러면','같은','같아']
-        text = [t for t in text.split() if t not in stopwords and len(t)>1]
-        text = ' '.join(text)
-
-        text = ' '.join(word)
-        counts = Counter(text.split())
-        tags = counts.most_common(70)
-
-        return {"tags": tags}
 
 
 if __name__ == "__main__":
