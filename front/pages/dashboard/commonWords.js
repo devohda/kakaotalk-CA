@@ -13,13 +13,11 @@ import WordCloud from '../../components/WordCloud';
 const CommonWords = () => {
 	const { chatData, loadData } = useContext(UserContext);
 
-	const [name1, setName1] = useState('');
-	const [name2, setName2] = useState('');
 	const [words, setWords] = useState([]);
 	useEffect(() => {
 		if (chatData === null) {
 			loadData();
-		} else if (!name1 && !name2 && chatData !== null) {
+		} else if (!words && chatData !== null) {
 			axios.post('/api/commonWords', chatData, {
 				timeout: 0
 			})
