@@ -20,9 +20,7 @@ const CommonWords = () => {
 		if (chatData === null) {
 			loadData();
 		} else if (!name1 && !name2 && chatData !== null) {
-			axios.create({
-				httpsAgent: new https.Agent({ keepAlive: true })
-			});
+			axios.default.timeout = 5 * 1000;
 			axios.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
