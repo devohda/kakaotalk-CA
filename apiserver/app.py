@@ -18,6 +18,8 @@ from pororo import Pororo
 from collections import Counter
 from wordcloud import WordCloud #워드클라우드 시각화
 
+#멀티프로세싱으로 시간 단축
+from multiprocessing import Pool
 
 app = Flask(__name__)  # Flask 객체 선언, 파라미터로 어플리케이션 패키지의 이름을 넣어줌.
 api = Api(app)  # Flask 객체에 Api 객체 등록
@@ -33,6 +35,40 @@ def time_24(t):
 def color_func(word, font_size, position,orientation,random_state=None, **kwargs):
     return("hsl({:d},{:d}%, {:d}%)".format(np.random.randint(212,313),np.random.randint(26,32),np.random.randint(45,80)))
 
+def kakao_text_preprocessing(data):
+  stopwords = '이 있 하 것 들 그 수 이 않 없 나 사람 주 아니 등 같 때 고 년 가 한 지 대하 오 말 일 그렇 위하 은 는 함 음 심 습니다 아요 세요 에요 었 였 에 을 를'.split()
+
+  #한글
+  import re
+  korean = re.sub("[^ㄱ-ㅎㅏ-ㅣ가-힣]"," ",data)
+
+  #띄어쓰기, 맞춤법
+  from hanspell import spell_checker
+  try:
+    spelled_sent = spell_checker.check(korean)
+    hanspell_sent = spelled_sent.checked
+  except:
+    hanspell_sent = korean
+
+  #정규화
+  from soynlp.normalizer import repeat_normalize
+  try:
+    normalized_sent = repeat_normalize(hanspell_sent)
+  except:
+    normalized_sent = hanspell_sent
+  #토큰화와 불용어
+  #from konlpy.tag import Mecab
+  #mecab = Mecab()
+  #tokenization = mecab.morphs(normalized_sent)
+  #no_stopwords = [token for token in tokenization if token not in stopwords]
+
+  return normalized_sent
+
+def use_multiprocess(func, iter, workers):
+    pool = Pool(processes=workers)
+    result = pool.map(func, iter)
+    pool.close()
+    return result
 
 @api.route('/')
 class Hello(Resource):
@@ -89,14 +125,14 @@ class CommonWords(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
-        print(data)
+        preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3) #전처리함수, 데이터에서 적용할 컬럼, workers수
+        data["preprocessed"] = preprocessed
 
         data.dropna(inplace=True) #결측값 빼기
         data.reset_index(drop=True,inplace=True)
 
         word = []
         tk = Pororo(task="tokenization", lang="ko", model = "word")
-        print(tk)
 
         for i in range(len(data)):
           token= tk(data["preprocessed"][i])
