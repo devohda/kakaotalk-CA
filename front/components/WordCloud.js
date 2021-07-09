@@ -6,7 +6,7 @@ const WordCloud = props => {
 	const chartRef = useRef(null);
 
 	useEffect(() => {
-		const myChartRef = chartRef.current.getContext('2d');
+		const myChartRef = chartRef.current.getContext(props.name);
 
 		Chart.register(WordCloudController, WordElement);
 		new Chart(myChartRef, {
@@ -16,7 +16,7 @@ const WordCloud = props => {
 				datasets: [
 					{
 						label: '',
-						data: props.words.map(d => 10 + d.value * 10)
+						data: props.words.map(d => d.value)
 					}
 				]
 			},

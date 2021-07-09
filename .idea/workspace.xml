@@ -7,6 +7,7 @@
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/components/WordCloud.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/WordCloud.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +124,7 @@
       <workItem from="1625556222469" duration="19304000" />
       <workItem from="1625611432271" duration="16058000" />
       <workItem from="1625688974051" duration="14347000" />
-      <workItem from="1625792147834" duration="15505000" />
+      <workItem from="1625792147834" duration="15782000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>
