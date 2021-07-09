@@ -148,7 +148,7 @@ class CommonWords(Resource):
         counts = Counter(text.split())
         tags = counts.most_common(70)
 
-        return {"tags": tags}
+        return "done"
 
 
 if __name__ == "__main__":
