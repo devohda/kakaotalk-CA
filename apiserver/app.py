@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set(style='white', context='notebook', palette='deep')
 
+from pororo import Pororo
 from collections import Counter
 from wordcloud import WordCloud #워드클라우드 시각화
 
