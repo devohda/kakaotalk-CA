@@ -30,6 +30,10 @@ def time_24(t):
             break
     return when
 
+def color_func(word, font_size, position,orientation,random_state=None, **kwargs):
+    return("hsl({:d},{:d}%, {:d}%)".format(np.random.randint(212,313),np.random.randint(26,32),np.random.randint(45,80)))
+
+
 @api.route('/')
 class Hello(Resource):
     def get(self):
@@ -82,30 +86,28 @@ class ChatReport(Resource):
 @api.route('/commonWords')
 class CommonWords(Resource):
     def post(self):
-        parsed_request = request.get_json()
-        data = pd.DataFrame(parsed_request)
+        data.dropna(inplace=True) #결측값 빼기
+        data.reset_index(drop=True,inplace=True)
 
-        #0. 전체 대화 개수 ->따로 화면에 띄워줄 예정
-        total_text = len(data)
+        word = []
+        tk = Pororo(task="tokenization", lang="ko", model = "word")
+        for i in range(len(data)):
+          token= tk(data["preprocessed"][i])
+          token = ' '.join(token)
+          word.append(token)
 
-        #0-1. 파일내 대화시작날짜, 대화 마지막 날짜 ->따로 화면에 띄워줄 예정
-        firstDate = data.Date[0]
-        lastDate = data.Date[total_text-1]
+        text = ' '.join(word)
+        stopwords = ['ㅋㅋ','ㅋ','는데','에서','해서','거든','어서','이거','거야','했는데','하는','그래','그러면','같은','같아']
+        text = [t for t in text.split() if t not in stopwords and len(t)>1]
+        text = ' '.join(text)
 
-        #0-2. 사용자별로 대화 개수 -> 따로 화면에 띄워줄 예정
-        df_user = data.groupby("User")["Message"].count().to_dict()
+        text = ' '.join(word)
+        counts = Counter(text.split())
+        tags = counts.most_common(70)
 
-        return {
-         "df_user" : df_user
-        }
+        print(tags)
 
-@api.route('/total-text')
-class TotalText(Resource):
-    def get(self):
-
-        data = ["hello","hello","hello"]
-        total_text = len(data)
-        return {"test" : "this is response"}
+        return {"success": "success"}
 
 
 if __name__ == "__main__":
