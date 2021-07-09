@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from 'react';
 import { Chart } from 'chart.js';
-import { WordCloudChart } from 'chartjs-chart-wordcloud';
+import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 
 const words = [
 	{ key: 'simple', value: 2 },
@@ -164,8 +164,9 @@ export default class WordCloud extends Component {
 	componentDidMount() {
 		const myChartRef = this.chartRef.current.getContext('2d');
 
-		new WordCloudChart(myChartRef, {
-			type: 'wordCloud',
+		Chart.register(WordCloudController, WordElement);
+		new Chart(myChartRef, {
+			type: WordCloudController.id,
 			data: {
 				labels: words.map(d => d.key),
 				datasets: [
@@ -185,12 +186,17 @@ export default class WordCloud extends Component {
 						display: false
 					}
 				}
+			},
+			defaults: {
+				global: {
+					defaultFontFamily: '굴림'
+				}
 			}
 		});
 	}
 	render() {
 		return (
-			<div>
+			<div fontSize={30}>
 				<canvas id="myChart" ref={this.chartRef} height="300vh" />
 			</div>
 		);

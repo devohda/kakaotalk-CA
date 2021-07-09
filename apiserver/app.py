@@ -29,6 +29,13 @@ def time_24(t):
             break
     return when
 
+@api.route('/)
+class Hello(Resource):
+    def get(self):
+        return {
+            "hello": "world"
+        }
+
 @api.route('/chatReport')
 class ChatReport(Resource):
     def post(self):
