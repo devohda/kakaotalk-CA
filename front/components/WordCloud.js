@@ -1,23 +1,22 @@
-import React, { Component, useEffect, useRef } from 'react';
+import React, { Component, useEffect } from 'react';
 import { Chart } from 'chart.js';
 import { WordCloudController, WordElement } from 'chartjs-chart-wordcloud';
 
-Chart.register(WordCloudController, WordElement);
+export default class WordCloud extends Component {
+	chartRef = React.createRef();
 
-const WordCloud = props => {
-	const chartRef = useRef(null);
+	componentDidMount() {
+		const myChartRef = this.chartRef.current.getContext('2d');
 
-	useEffect(() => {
-		const myChartRef = chartRef.current.getContext(props.name);
+		Chart.register(WordCloudController, WordElement);
 		new Chart(myChartRef, {
-			id: props.name,
-			type: 'wordCloud',
+			type: WordCloudController.id,
 			data: {
-				labels: props.words.map(d => d.key),
+				labels: this.props.words.map(d => d.key),
 				datasets: [
 					{
 						label: '',
-						data: props.words.map(d => d.value)
+						data: this.props.words.map(d => 10 + d.value * 10)
 					}
 				]
 			},
@@ -38,13 +37,12 @@ const WordCloud = props => {
 				}
 			}
 		});
-	});
-
-	return (
-		<div id={props.name + '1'} fontSize={30}>
-			<canvas id={props.name} ref={chartRef} height="300vh" />
-		</div>
-	);
-};
-
-export default WordCloud;
+	}
+	render() {
+		return (
+			<div fontSize={30}>
+				<canvas id="myChart" ref={this.chartRef} height="300vh" />
+			</div>
+		);
+	}
+}
