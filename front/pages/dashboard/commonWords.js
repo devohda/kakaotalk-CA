@@ -33,7 +33,12 @@ const CommonWords = () => {
 					const users = Object.keys(data.df_user);
 					setName1(users[0]);
 					setName2(users[1]);
-					console.log(data.tags);
+
+					const tags = data.tags;
+					const cloudData = tags.map(tag => {
+						return { key: tag[0], value: tag[1] };
+					});
+					setWords(cloudData);
 				})
 				.catch(err => console.log(err));
 		}
@@ -75,7 +80,7 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<WordCloud />
+						{words && <WordCloud words={words} />}
 					</Flex>
 				)}
 			</Flex>
@@ -104,7 +109,7 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<WordCloud />
+						{words && <WordCloud words={words} />}
 					</Flex>
 				)}
 			</Flex>
