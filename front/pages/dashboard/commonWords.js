@@ -80,9 +80,9 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						{words && (
-							<WordCloud words={words} name={name1} />
-						)}
+						{/*{words && (*/}
+						{/*	<WordCloud words={words} name={name1} />*/}
+						{/*)}*/}
 					</Flex>
 				)}
 			</Flex>
