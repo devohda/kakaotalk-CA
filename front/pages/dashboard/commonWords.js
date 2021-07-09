@@ -14,13 +14,17 @@ const CommonWords = () => {
 	const { chatData, loadData } = useContext(UserContext);
 
 	const [words, setWords] = useState(null);
-	useEffect(() => {
+	useEffect(async () => {
 		if (chatData === null) {
 			loadData();
 		} else if (!words && chatData !== null) {
-			axios.post('/api/commonWords', chatData, {
-				timeout: 0
-			})
+			const instance = await axios.create({
+				url: '/api/commonWords',
+				timeout: 500000
+			});
+
+			instance
+				.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
 					console.log(data);
