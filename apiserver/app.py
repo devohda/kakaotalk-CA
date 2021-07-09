@@ -125,7 +125,30 @@ class CommonWords(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
-        return {"tags": "tags"}
+        preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3) #전처리함수, 데이터에서 적용할 컬럼, workers수
+        data["preprocessed"] = preprocessed
+
+        data.dropna(inplace=True) #결측값 빼기
+        data.reset_index(drop=True,inplace=True)
+
+        word = []
+        tk = Pororo(task="tokenization", lang="ko", model = "word")
+
+        for i in range(len(data)):
+          token= tk(data["preprocessed"][i])
+          token = ' '.join(token)
+          word.append(token)
+
+        text = ' '.join(word)
+        stopwords = ['ㅋㅋ','ㅋ','는데','에서','해서','거든','어서','이거','거야','했는데','하는','그래','그러면','같은','같아']
+        text = [t for t in text.split() if t not in stopwords and len(t)>1]
+        text = ' '.join(text)
+
+        text = ' '.join(word)
+        counts = Counter(text.split())
+        tags = counts.most_common(70)
+
+        return {"tags": tags}
 
 
 if __name__ == "__main__":
