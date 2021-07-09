@@ -13,7 +13,7 @@ import WordCloud from '../../components/WordCloud';
 const CommonWords = () => {
 	const { chatData, loadData } = useContext(UserContext);
 
-	const [words, setWords] = useState([]);
+	const [words, setWords] = useState(null);
 	useEffect(() => {
 		if (chatData === null) {
 			loadData();
