@@ -29,7 +29,7 @@ def time_24(t):
             break
     return when
 
-@api.route('/)
+@api.route('/')
 class Hello(Resource):
     def get(self):
         return {
