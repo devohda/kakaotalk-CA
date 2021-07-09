@@ -14,7 +14,7 @@ const CommonWords = () => {
 
 	const [name1, setName1] = useState('');
 	const [name2, setName2] = useState('');
-
+	const [words, setWords] = useState([]);
 	useEffect(() => {
 		if (chatData === null) {
 			loadData();
@@ -22,9 +22,8 @@ const CommonWords = () => {
 			axios.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
-					const users = Object.keys(data.df_user);
-					setName1(users[0]);
-					setName2(users[1]);
+					console.log(data);
+					setWords(data);
 				})
 				.catch(err => console.log(err));
 		}
