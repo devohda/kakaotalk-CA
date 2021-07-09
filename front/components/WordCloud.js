@@ -6,8 +6,9 @@ Chart.register(WordCloudController, WordElement);
 
 const WordCloud = props => {
 	const chartRef = useRef(null);
-	const myChartRef = chartRef.current.getContext(props.name);
+
 	useEffect(() => {
+		const myChartRef = chartRef.current.getContext(props.name);
 		new Chart(myChartRef, {
 			id: props.name,
 			type: 'wordCloud',
@@ -40,7 +41,7 @@ const WordCloud = props => {
 	});
 
 	return (
-		<div fontSize={30}>
+		<div id={props.name + '1'} fontSize={30}>
 			<canvas id={props.name} ref={chartRef} height="300vh" />
 		</div>
 	);
