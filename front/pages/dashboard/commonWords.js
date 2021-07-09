@@ -20,17 +20,15 @@ const CommonWords = () => {
 		if (chatData === null) {
 			loadData();
 		} else if (!name1 && !name2 && chatData !== null) {
-			axios.create(instance => {
-				instance.default.timeout = 3 * 60 * 1000;
-				instance
-					.post('/api/commonWords', chatData)
-					.then(res => {
-						const data = res.data;
-						console.log(data);
-						setWords(data);
-					})
-					.catch(err => console.log(err));
-			});
+			axios.post('/api/commonWords', chatData, {
+				timeout: 0
+			})
+				.then(res => {
+					const data = res.data;
+					console.log(data);
+					setWords(data);
+				})
+				.catch(err => console.log(err));
 		}
 	});
 
