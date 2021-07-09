@@ -20,8 +20,10 @@ const CommonWords = () => {
 		if (chatData === null) {
 			loadData();
 		} else if (!name1 && !name2 && chatData !== null) {
-			axios.default.timeout = 5 * 1000;
-			axios.post('/api/commonWords', chatData)
+			const instance = axios.create();
+			instance.default.timeout = 3 * 60 * 1000;
+			instance
+				.post('/api/commonWords', chatData)
 				.then(res => {
 					const data = res.data;
 					console.log(data);
