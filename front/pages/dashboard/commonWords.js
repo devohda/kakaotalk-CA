@@ -3,6 +3,7 @@ import { Flex, Heading, Text } from '@chakra-ui/react';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
+import https from 'https';
 
 const width = 400;
 const height = 400;
