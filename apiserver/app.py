@@ -101,7 +101,7 @@ class Preprocessing(Resource):
         preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3)
         data["preprocessed"] = preprocessed
 
-        print(data.to_json(oriented='records'))
+        print(data.to_json(orient='records'))
 
         result = {
             "firstdate": firstdate,
