@@ -4,14 +4,12 @@ import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
 
-const width = 400;
-const height = 400;
-
 import HorizontalBar from '../../components/HorizontalBar';
-import WordCloud from '../../components/WordCloud';
 
 const Sentiment1 = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
+	const [mePData, setMePData] = useState(null);
+	const [youPData, setYouPData] = useState(null);
 
 	useEffect(() => {
 		if (!chatData) {
@@ -26,7 +24,9 @@ const Sentiment1 = () => {
 			)
 				.then(res => {
 					const data = res.data;
-					console.log(data);
+					const { me_p_data, you_p_data } = data;
+					setMePData(me_p_data);
+					setYouPData(you_p_data);
 				})
 				.catch(err => console.log(`timeout : ${err}`));
 		}
@@ -51,7 +51,7 @@ const Sentiment1 = () => {
 						mb={4}
 						letterSpacing="tight"
 					>
-						우리가 주로 사용하는 말
+						기분 좋을 때 사용하는 단어
 					</Heading>
 				</Flex>
 				{name1 && (
@@ -68,7 +68,12 @@ const Sentiment1 = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<HorizontalBar />
+						{mePData && (
+							<HorizontalBar
+								labels={mePData.map(data => data[0])}
+								data={mePData.map(data => data[1])}
+							/>
+						)}
 					</Flex>
 				)}
 			</Flex>
@@ -97,7 +102,12 @@ const Sentiment1 = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<HorizontalBar />
+						{youPData && (
+							<HorizontalBar
+								labels={youPData.map(data => data[0])}
+								data={youPData.map(data => data[1])}
+							/>
+						)}
 					</Flex>
 				)}
 			</Flex>

@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { Flex, Text, Image, Button, Icon } from '@chakra-ui/react';
-import { FiBarChart, FiBarChart2, FiHome, FiPieChart } from 'react-icons/fi';
+import { FiBarChart, FiHeart, FiHome } from 'react-icons/fi';
+import { BiSmile, BiSad, BiChat } from 'react-icons/bi';
+import { RiKakaoTalkLine } from 'react-icons/ri';
 import SidebarItems from './SidebarItems';
 import UserContext from './UserContext';
 
@@ -20,31 +22,31 @@ const Navigation = () => {
 					>
 						<SidebarItems
 							link="/dashboard/chatReport"
-							icon={FiHome}
+							icon={BiChat}
 							title="우리의 채팅 통계"
 							active={true}
 						/>
 						<SidebarItems
 							link="/dashboard/commonWords"
-							icon={FiBarChart}
+							icon={RiKakaoTalkLine}
 							title="우리가 주로 사용하는 말"
 							active={false}
 						/>
 						<SidebarItems
 							link="/dashboard/loveCalc"
-							icon={FiBarChart2}
+							icon={FiHeart}
 							title="우리의 애정 척도"
 							active={false}
 						/>
 						<SidebarItems
 							link="/dashboard/sentiment1"
-							icon={FiPieChart}
+							icon={BiSmile}
 							title="기분 좋을 때 사용하는 단어"
 							active={false}
 						/>
 						<SidebarItems
 							link="/dashboard/sentiment2"
-							icon={FiPieChart}
+							icon={BiSad}
 							title="기분 나쁠 때 사용하는 단어"
 							active={false}
 						/>

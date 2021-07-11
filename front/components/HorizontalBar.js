@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-const data = {
+const chartData = {
 	labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 	datasets: [
 		{
@@ -49,8 +49,12 @@ const options = {
 	}
 };
 
-const HorizontalBarChart = () => {
-	return <Bar data={data} options={options} />;
+const HorizontalBarChart = props => {
+	useEffect(() => {
+		chartData.labels = props.labels;
+		chartData.datasets[0].data = props.data;
+	});
+	return <Bar data={chartData} options={options} />;
 };
 
 export default HorizontalBarChart;

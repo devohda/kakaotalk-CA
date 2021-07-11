@@ -4,14 +4,12 @@ import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
 
-const width = 400;
-const height = 400;
-
 import HorizontalBar from '../../components/HorizontalBar';
-import WordCloud from '../../components/WordCloud';
 
 const Sentiment2 = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
+	const [meNData, setMeNData] = useState(null);
+	const [youNData, setYouNData] = useState(null);
 
 	useEffect(() => {
 		if (!chatData) {
@@ -21,12 +19,14 @@ const Sentiment2 = () => {
 				'http://34.146.140.41:5000/sentiment2',
 				JSON.parse(chatData),
 				{
-					timeout: 500000
+					timeout: 5000000
 				}
 			)
 				.then(res => {
 					const data = res.data;
-					console.log(data);
+					const { me_n_data, you_n_data } = data;
+					setMeNData(me_n_data);
+					setYouNData(you_n_data);
 				})
 				.catch(err => console.log(`timeout : ${err}`));
 		}
@@ -51,7 +51,7 @@ const Sentiment2 = () => {
 						mb={4}
 						letterSpacing="tight"
 					>
-						우리가 주로 사용하는 말
+						기분 나쁠 때 사용하는 단어
 					</Heading>
 				</Flex>
 				{name1 && (
@@ -68,7 +68,12 @@ const Sentiment2 = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<HorizontalBar />
+						{meNData && (
+							<HorizontalBar
+								labels={meNData.map(data => data[0])}
+								data={meNData.map(data => data[1])}
+							/>
+						)}
 					</Flex>
 				)}
 			</Flex>
@@ -97,7 +102,12 @@ const Sentiment2 = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						<HorizontalBar />
+						{youNData && (
+							<HorizontalBar
+								labels={youNData.map(data => data[0])}
+								data={youNData.map(data => data[1])}
+							/>
+						)}
 					</Flex>
 				)}
 			</Flex>
