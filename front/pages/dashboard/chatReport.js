@@ -16,7 +16,6 @@ const ChatReport = () => {
 		if (!chatData) {
 			loadData();
 		} else {
-			console.log(`chatData: ${chatData}`);
 			axios.post('/api/chatReport', chatData)
 				.then(res => {
 					const data = res.data;
