@@ -231,6 +231,12 @@ def pos_neg(df):  # 긍정, 부정 결과만 데이터프레임을 새로 만들
     return df_pos, df_neg
 
 
+# 기분 좋을 때/ 안 좋을 때
+pos = ["NNG", "NNP", "MAG", "IC"]  # pos : 명사, 동사, 형용사, 부사
+verse = ["VV", "VA"]  # VV, VA -> 원형으로 복원
+
+stopwords_verse = ["하다", "같다", "있다", "되다"]
+
 # 동사,형용사 원형 복원, 명사, 부사 추출
 from khaiii import KhaiiiApi
 
@@ -312,9 +318,8 @@ class Sentiment1(Resource):
 
         sa = Pororo(task="sentiment", model="brainbert.base.ko.nsmc", lang="ko")  # Pororo 감성분석 모델
         df = data[data["Date"].str[:7] == '2021-06'].reset_index(drop=True)  # 2021-6월 대화만
-        print(df)
+
         user = df.User.unique()
-        print(user)
         df_me = df[df.User == user[0]].reset_index(drop=True)  # 유저1
         df_you = df[df.User == user[1]].reset_index(drop=True)  # 유저2
 

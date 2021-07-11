@@ -17,7 +17,13 @@ const Sentiment2 = () => {
 		if (!chatData) {
 			loadData();
 		} else {
-			axios.post('/api/sentiment2', JSON.parse(chatData))
+			axios.post(
+				'http://34.146.140.41:5000/sentiment2',
+				JSON.parse(chatData),
+				{
+					timeout: 500000
+				}
+			)
 				.then(res => {
 					const data = res.data;
 					console.log(data);

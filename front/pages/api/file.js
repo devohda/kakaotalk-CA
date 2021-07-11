@@ -1,6 +1,5 @@
 import formidable from 'formidable';
 import fs from 'fs';
-import axios from 'axios';
 
 export const config = {
 	api: {
@@ -52,7 +51,7 @@ const txtToJSON = txt_file => {
 					.substr(str.indexOf('[') + 1, str.indexOf(']') - 1)
 					.split(/ |:/);
 
-				time[1] = Number(time[1]);
+				time[1] = Number(time[1]) === 24 ? 0 : Number(time[1]);
 				time[2] = Number(time[2]);
 				if (time[0] === '오후') time[1] += 12;
 
@@ -63,6 +62,7 @@ const txtToJSON = txt_file => {
 					':00';
 				const date = `${chatDate} ${timeData}`;
 
+				console.log(timeData);
 				// 내용 추출
 				const message = str.substr(str.indexOf(']') + 2);
 

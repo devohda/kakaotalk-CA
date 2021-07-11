@@ -4,14 +4,18 @@ import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
 
-const width = 400;
-const height = 400;
-
-import HorizontalBar from '../../components/HorizontalBar';
-import WordCloud from '../../components/WordCloud';
+import Table from '../../components/Table';
 
 const LoveCalc = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
+	const [hour, setHour] = useState(null);
+	const [hourYou, setHourYou] = useState(null);
+	const [min, setMin] = useState(null);
+	const [minYou, setMinYou] = useState(null);
+	const [mePosProp, setMePosProp] = useState(null);
+	const [meNegProp, setMeNegProp] = useState(null);
+	const [youNegProp, setYouNegProp] = useState(null);
+	const [youPosProp, setYouPosProp] = useState(null);
 
 	useEffect(() => {
 		if (!chatData) {
@@ -20,7 +24,24 @@ const LoveCalc = () => {
 			axios.post('/api/loveCalc', JSON.parse(chatData))
 				.then(res => {
 					const data = res.data;
-					console.log(data);
+					const {
+						hour,
+						hour_you,
+						me_neg_prop,
+						me_pos_prop,
+						min,
+						min_you,
+						you_neg_prop,
+						you_pos_prop
+					} = data;
+					setHour(hour);
+					setHourYou(hour_you);
+					setMeNegProp(me_neg_prop);
+					setMePosProp(me_pos_prop);
+					setMin(min);
+					setMinYou(min_you);
+					setYouNegProp(you_neg_prop);
+					setYouPosProp(you_pos_prop);
 				})
 				.catch(err => console.log(`timeout : ${err}`));
 		}
@@ -33,7 +54,7 @@ const LoveCalc = () => {
 
 			{/*column 2*/}
 			<Flex
-				w="42%"
+				w="80%"
 				p="3%"
 				flexDir="column"
 				overflow="auto"
@@ -45,55 +66,52 @@ const LoveCalc = () => {
 						mb={4}
 						letterSpacing="tight"
 					>
-						우리가 주로 사용하는 말
+						우리의 애정 척도 ❤️
 					</Heading>
 				</Flex>
-				{name1 && (
-					<Flex flexDir="column">
-						<Flex
-							flexDir="rows"
-							mt={100}
-							mb={100}
-							paddingY="2vh"
-							fontSize="2xl"
-						>
-							<Text fontWeight="bold" mr={5}>
-								👧 {name1}
-							</Text>
-							<Text>님</Text>
-						</Flex>
-						<HorizontalBar />
-					</Flex>
-				)}
-			</Flex>
-
-			{/*column 3*/}
-			<Flex
-				flexDir="column"
-				w="42%"
-				bg="#f5f5f5"
-				p="3%"
-				overflow="auto"
-				minH="100vh"
-			>
-				<Flex h="5vh"></Flex>
-				{name2 && (
-					<Flex flexDir="column">
-						<Flex
-							flexDir="rows"
-							mt={100}
-							mb={100}
-							paddingY="2vh"
-							fontSize="2xl"
-						>
-							<Text fontWeight="bold" mr={5}>
-								👦 {name2}
-							</Text>
-							<Text>님</Text>
-						</Flex>
-						<HorizontalBar />
-					</Flex>
-				)}
+				<Flex
+					w="100%"
+					h="100%"
+					alignItems="center"
+					flexDir="column"
+				>
+					{hour && (
+						<Table
+							names={{ name1, name2 }}
+							data={[
+								{
+									title: '😊 긍정적인 대화 비율',
+									percent1:
+										(mePosProp * 100).toFixed(1) +
+										'%',
+									percent2:
+										(youPosProp * 100).toFixed(
+											1
+										) + '%'
+								},
+								{
+									title: '😥 부정적인 대화 비율',
+									percent1:
+										(meNegProp * 100).toFixed(1) +
+										'%',
+									percent2:
+										(youNegProp * 100).toFixed(
+											1
+										) + '%'
+								},
+								{
+									title: '💌 평균 답장 시간',
+									percent1: `${hour.toFixed(
+										0
+									)} 시간 ${min.toFixed(1)} 분`,
+									percent2: `${hourYou.toFixed(
+										0
+									)} 시간 ${minYou.toFixed(1)} 분`
+								}
+							]}
+						/>
+					)}
+				</Flex>
 			</Flex>
 		</Flex>
 	);

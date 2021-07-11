@@ -23,7 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
+      <change afterPath="$PROJECT_DIR$/front/components/Table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/api/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,9 +132,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front/pages/home.js" working-dir="$PROJECT_DIR$/front/pages/dashboard">
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="kakaotalk-CA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -149,6 +152,9 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front/pages/home.js" working-dir="$PROJECT_DIR$/front/pages/dashboard">
       <method v="2" />
     </configuration>
   </component>
