@@ -49,7 +49,7 @@ const Home = () => {
 								firstdate,
 								lastdate,
 								df_user,
-								JSON.parse(data)
+								data
 							);
 						})
 						.catch(err => console.log(`timeout : ${err}`));

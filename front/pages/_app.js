@@ -14,29 +14,27 @@ export default class MyApp extends App {
 
 	componentDidMount = () => {
 		const chatData = localStorage.getItem('chat-data');
-		const df_user = localStorage.getItem('df_user');
-
+		const name1 = localStorage.getItem('name1');
+		const name2 = localStorage.getItem('name2');
 		if (chatData) {
-			this.setState({
-				chatData
-			});
-			this.setState({ name1: Object.keys(df_user)[0] });
-			this.setState({ name2: Object.keys(df_user)[1] });
+			this.setState({ chatData });
+			this.setState({ name1 });
+			this.setState({ name2 });
+			console.log(this.state.name1, this.state.name2);
 		} else {
 			Router.push('/home');
 		}
 	};
 
 	loadData = () => {
-		console.log('load data');
 		const chatData = localStorage.getItem('chat-data');
+		const name1 = localStorage.getItem('name1');
+		const name2 = localStorage.getItem('name2');
 		if (chatData) {
-			console.log(chatData);
-			this.setState({
-				chatData
-			});
+			this.setState({ chatData });
+			this.setState({ name1 });
+			this.setState({ name2 });
 		} else {
-			console.log("data isn't exist");
 			Router.push('/home');
 		}
 	};
@@ -44,7 +42,8 @@ export default class MyApp extends App {
 	analyzeData = (firstdate, lastdate, df_user, data) => {
 		localStorage.setItem('firstdate', firstdate);
 		localStorage.setItem('lastdate', lastdate);
-		localStorage.setItem('df_user', df_user);
+		localStorage.setItem('name1', Object.keys(df_user)[0]);
+		localStorage.setItem('name2', Object.keys(df_user)[1]);
 		localStorage.setItem('chat-data', data);
 
 		this.setState({ chatData: data });

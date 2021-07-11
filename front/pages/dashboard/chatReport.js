@@ -4,7 +4,6 @@ import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
-import Router from 'next/router';
 
 const ChatReport = () => {
 	const { chatData, loadData } = useContext(UserContext);
@@ -16,10 +15,9 @@ const ChatReport = () => {
 		if (!chatData) {
 			loadData();
 		} else {
-			axios.post('/api/chatReport', chatData)
+			axios.post('/api/chatReport', JSON.parse(chatData))
 				.then(res => {
 					const data = res.data;
-					console.log(data);
 					setDfMonth(data.df_month);
 					setDfHour(data.df_hour);
 				})

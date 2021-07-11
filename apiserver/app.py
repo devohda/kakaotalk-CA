@@ -177,7 +177,7 @@ class CommonWords(Resource):
 
         text_me = ' '.join(word_me)
         counts = Counter(text_me.split())
-        tags_me = counts.most_common(30)
+        tags_me = counts.most_common(50)
 
         for i in range(len(df_you)):
             token = tk(data["preprocessed"][i])

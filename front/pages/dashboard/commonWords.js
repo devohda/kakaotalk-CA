@@ -6,42 +6,33 @@ import axios from 'axios';
 import WordCloud from '../../components/WordCloud';
 
 const CommonWords = () => {
-	const { chatData, loadData } = useContext(UserContext);
-
-	const [name1, setName1] = useState('');
-	const [name2, setName2] = useState('');
-	const [words, setWords] = useState(null);
-	const [server, setServer] = useState(false);
-
+	const { chatData, name1, name2, loadData } = useContext(UserContext);
+	const [words1, setWords1] = useState(null);
+	const [words2, setWords2] = useState(null);
 	useEffect(async () => {
-		if (chatData === null) {
+		console.log(name1, name2);
+		if (!chatData) {
 			loadData();
-		} else if (!words && chatData !== null && !server) {
-			setServer(true);
-			const instance = await axios.create({
-				url: '/api/commonWords',
-				timeout: 500000
-			});
-
-			instance
-				.post('http://34.146.140.41:5000/commonWords', chatData, {
-					timeout: 500000
-				})
+		} else {
+			axios.post('/api/commonWords', JSON.parse(chatData))
 				.then(res => {
 					const data = res.data;
-					const users = Object.keys(data.df_user);
-					setName1(users[0]);
-					setName2(users[1]);
-
-					const tags = data.tags;
-					const cloudData = tags.map(tag => {
+					console.log(data);
+					const tags_me = data.tags_me;
+					const tags_you = data.tags_you;
+					const cloudData1 = tags_me.map(tag => {
 						return { key: tag[0], value: tag[1] };
 					});
-					setWords(cloudData);
+					const cloudData2 = tags_you.map(tag => {
+						return { key: tag[0], value: tag[1] };
+					});
+
+					setWords1(cloudData1);
+					setWords2(cloudData2);
 				})
 				.catch(err => console.log(`timeout : ${err}`));
 		}
-	});
+	}, [chatData]);
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
@@ -79,8 +70,8 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						{words && (
-							<WordCloud words={words} name={name1} />
+						{words1 && (
+							<WordCloud words={words1} name={name1} />
 						)}
 					</Flex>
 				)}
@@ -110,8 +101,8 @@ const CommonWords = () => {
 							</Text>
 							<Text>님</Text>
 						</Flex>
-						{words && (
-							<WordCloud words={words} name={name2} />
+						{words2 && (
+							<WordCloud words={words2} name={name2} />
 						)}
 					</Flex>
 				)}
