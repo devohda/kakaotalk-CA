@@ -15,19 +15,18 @@ const ChatReport = () => {
 	useEffect(() => {
 		if (!chatData) {
 			loadData();
+		} else {
+			console.log(`chatData: ${chatData}`);
+			axios.post('/api/chatReport', chatData)
+				.then(res => {
+					const data = res.data;
+					console.log(data);
+					setDfMonth(data.df_month);
+					setDfHour(data.df_hour);
+				})
+				.catch(err => console.log(err));
 		}
-		// else if (!dfMonth && !dfHour && chatData !== null) {
-		// 	axios.post('/api/chatReport', chatData)
-		// 		.then(res => {
-		// 			const data = res.data;
-		// 			console.log(data);
-		// 			setDfMonth(data.df_month);
-		// 			setDfHour(data.df_hour);
-		// 		})
-		// 		.catch(err => console.log(err));
-		// }
-		console.log(chatData);
-	});
+	}, [chatData]);
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">

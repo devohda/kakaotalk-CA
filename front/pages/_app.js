@@ -14,10 +14,14 @@ export default class MyApp extends App {
 
 	componentDidMount = () => {
 		const chatData = localStorage.getItem('chat-data');
+		const df_user = localStorage.getItem('df_user');
+
 		if (chatData) {
 			this.setState({
 				chatData
 			});
+			this.setState({ name1: Object.keys(df_user)[0] });
+			this.setState({ name2: Object.keys(df_user)[1] });
 		} else {
 			Router.push('/home');
 		}
@@ -37,9 +41,16 @@ export default class MyApp extends App {
 		}
 	};
 
-	analyzeData = data => {
+	analyzeData = (firstdate, lastdate, df_user, data) => {
+		localStorage.setItem('firstdate', firstdate);
+		localStorage.setItem('lastdate', lastdate);
+		localStorage.setItem('df_user', df_user);
 		localStorage.setItem('chat-data', data);
+
 		this.setState({ chatData: data });
+		this.setState({ name1: Object.keys(df_user)[0] });
+		this.setState({ name2: Object.keys(df_user)[1] });
+
 		Router.push('/dashboard/chatReport');
 	};
 

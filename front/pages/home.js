@@ -45,7 +45,12 @@ const Home = () => {
 								df_user,
 								data
 							} = res.data;
-							analyzeData(data);
+							analyzeData(
+								firstdate,
+								lastdate,
+								df_user,
+								data
+							);
 						})
 						.catch(err => console.log(`timeout : ${err}`));
 				});
