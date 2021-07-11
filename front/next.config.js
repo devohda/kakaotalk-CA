@@ -3,19 +3,19 @@ module.exports = {
 		return [
 			{
 				source: '/api/chatReport',
-				destination: 'http://localhost:5000/chatReport'
+				destination: 'http://34.146.140.41:5000/chatReport'
 			},
 			{
 				source: '/api/commonWords',
-				destination: 'http://localhost:5000/commonWords'
+				destination: 'http://34.146.140.41:5000/commonWords'
 			},
 			{
 				source: '/api/emotion',
-				destination: 'http://localhost:5000/emotion'
+				destination: 'http://34.146.140.41:5000/emotion'
 			},
 			{
 				source: '/api/loveCalc',
-				destination: 'http://localhost:5000/loveCalc'
+				destination: 'http://34.146.140.41:5000/loveCalc'
 			},
 			{
 				source: '/',
