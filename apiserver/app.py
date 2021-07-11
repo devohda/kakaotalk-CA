@@ -233,12 +233,12 @@ def pos_neg(df):  # 긍정, 부정 결과만 데이터프레임을 새로 만들
 # 동사,형용사 원형 복원, 명사, 부사 추출
 from khaiii import KhaiiiApi
 
-api = KhaiiiApi()
+khApp = KhaiiiApi()
 
 
 def Morphology_analysis(sentence):
     morphs = []
-    for word in api.analyze(sentence):
+    for word in khApp.analyze(sentence):
         for morph in word.morphs:
 
             # 동사(VV,VA)는 원형으로 바꾸기
