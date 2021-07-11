@@ -255,7 +255,7 @@ def Morphology_analysis(sentence):
     return result
 
 
-@api.route('/sentiment')
+@api.route('/loveCalc')
 class Preprocessing(Resource):
     def post(self):
         # request 는 json 형태로 반환됨
@@ -282,32 +282,56 @@ class Preprocessing(Resource):
         df_you_pos, df_you_neg = pos_neg(df_you)  # 유저2의 긍정, 부정 데이터프레임
 
         # 나와 상대방의 애정도 퍼센트
-        me_pos_prop = len(df_me_pos) / len(df_me)  # 유저1의 긍정텍스트 퍼센트 -> 이 값을 사용하면 됩니다!!
-        me_neg_prop = len(df_me_neg) / len(df_me)  # 유저1의 부정텍스트 퍼센트 -> 이 값을 사용하면 됩니다!!
+        me_pos_prop = len(df_me_pos) / len(df_me)  # 유저1의 긍정텍스트 퍼센트
+        me_neg_prop = len(df_me_neg) / len(df_me)  # 유저1의 부정텍스트 퍼센트
 
-        you_pos_prop = len(df_you_pos) / len(df_you)  # 유저2의 긍정텍스트 퍼센트 -> 이 값을 사용하면 됩니다!!
-        you_neg_prop = len(df_you_neg) / len(df_you)  # 유저2의 부정텍스트 퍼센트 -> 이 값을 사용하면 됩니다!!
+        you_pos_prop = len(df_you_pos) / len(df_you)  # 유저2의 긍정텍스트 퍼센트
+        you_neg_prop = len(df_you_neg) / len(df_you)  # 유저2의 부정텍스트 퍼센트
+
+        return {
+            "hour": hour,
+            "min": min,
+            "hour_you": hour_you,
+            "min_you": min_you,
+            "me_pos_prop": me_pos_prop,
+            "me_neg_prop": me_neg_prop,
+            "you_pos_prop": you_pos_prop,
+            "you_neg_prop": you_neg_prop
+        }
+
+
+@api.route('/sentiment1')
+class Preprocessing(Resource):
+    def post(self):
+        # request 는 json 형태로 반환됨
+        parsed_request = request.get_json()
+        data = pd.DataFrame(parsed_request)
+
+        data.dropna(inplace=True)
+        data.reset_index(drop=True, inplace=True)
+
+        sa = Pororo(task="sentiment", model="brainbert.base.ko.nsmc", lang="ko")  # Pororo 감성분석 모델
+        df = data[data["Date"].str[:7] == '2021-06'].reset_index(drop=True)  # 2021-6월 대화만
+
+        user = df.User.unique()
+        df_me = df[df.User == user[0]].reset_index(drop=True)  # 유저1
+        df_you = df[df.User == user[1]].reset_index(drop=True)  # 유저2
+
+        df_me = make_sentiment(df_me, sa)  # 유저1의 감성분석 결과
+        df_you = make_sentiment(df_you, sa)  # 유저2의 감성분석 결과
+
+        df_me_pos, df_me_neg = pos_neg(df_me)  # 유저1의 긍정, 부정 데이터프레임
+        df_you_pos, df_you_neg = pos_neg(df_you)  # 유저2의 긍정, 부정 데이터프레임
 
         df_me_pos["morphs"] = df_me_pos["preprocessed"].apply(Morphology_analysis)
-        df_me_neg["morphs"] = df_me_neg["preprocessed"].apply(Morphology_analysis)
-
         df_you_pos["morphs"] = df_you_pos["preprocessed"].apply(Morphology_analysis)
-        df_you_neg["morphs"] = df_you_neg["preprocessed"].apply(Morphology_analysis)
 
         # 유저1의 긍정적인 단어
         me_p_text = list(df_me_pos.morphs)  # 형태소 분석한것들 가져오기
         me_p_text = ' '.join(me_p_text)  # counter에 넣기전 처리
         count = Counter(me_p_text.split())  # 단어 개수 세는 counter~~~
         me_p_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
-        print(me_p_data)
-        me_pos_word = pd.DataFrame(me_p_data, columns=["word", "count"])
-
-        # 유저1의 부정적인 단어
-        me_n_text = list(df_me_neg.morphs)
-        me_n_text = ' '.join(me_n_text)
-        count = Counter(me_n_text.split())
-        me_n_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
-        me_neg_word = pd.DataFrame(me_n_data, columns=["word", "count"])
+        me_p_word = pd.DataFrame(me_p_data, columns=["word", "count"])
 
         # 유저2의 긍정적인 단어
         you_p_text = list(df_you_pos.morphs)
@@ -315,6 +339,45 @@ class Preprocessing(Resource):
         count = Counter(you_p_text.split())
         you_p_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
         you_p_word = pd.DataFrame(you_p_data, columns=["word", "count"])
+
+        return {
+            "me_p_word": me_p_word.to_json(orient='records', force_ascii=False),
+            "you_p_word": you_p_word.to_json(orient='records', force_ascii=False)
+        }
+
+
+@api.route('/sentiment1')
+class Preprocessing(Resource):
+    def post(self):
+        # request 는 json 형태로 반환됨
+        parsed_request = request.get_json()
+        data = pd.DataFrame(parsed_request)
+
+        data.dropna(inplace=True)
+        data.reset_index(drop=True, inplace=True)
+
+        sa = Pororo(task="sentiment", model="brainbert.base.ko.nsmc", lang="ko")  # Pororo 감성분석 모델
+        df = data[data["Date"].str[:7] == '2021-06'].reset_index(drop=True)  # 2021-6월 대화만
+
+        user = df.User.unique()
+        df_me = df[df.User == user[0]].reset_index(drop=True)  # 유저1
+        df_you = df[df.User == user[1]].reset_index(drop=True)  # 유저2
+
+        df_me = make_sentiment(df_me, sa)  # 유저1의 감성분석 결과
+        df_you = make_sentiment(df_you, sa)  # 유저2의 감성분석 결과
+
+        df_me_pos, df_me_neg = pos_neg(df_me)  # 유저1의 긍정, 부정 데이터프레임
+        df_you_pos, df_you_neg = pos_neg(df_you)  # 유저2의 긍정, 부정 데이터프레임
+
+        df_me_neg["morphs"] = df_me_neg["preprocessed"].apply(Morphology_analysis)
+        df_you_neg["morphs"] = df_you_neg["preprocessed"].apply(Morphology_analysis)
+
+        # 유저1의 부정적인 단어
+        me_n_text = list(df_me_neg.morphs)
+        me_n_text = ' '.join(me_n_text)
+        count = Counter(me_n_text.split())
+        me_n_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
+        me_n_word = pd.DataFrame(me_n_data, columns=["word", "count"])
 
         # 유저2의 부정적인 단어
         you_n_text = list(df_you_neg.morphs)
@@ -324,8 +387,8 @@ class Preprocessing(Resource):
         you_n_word = pd.DataFrame(you_n_data, columns=["word", "count"])
 
         return {
-            'hello': 'world'
+            "me_n_word": me_n_word.to_json(orient='records', force_ascii=False),
+            "you_n_word": you_n_word.to_json(orient='records', force_ascii=False)
         }
-
 
 app.run(debug=True, host='0.0.0.0', port=5000)

@@ -23,12 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
+      <change afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/emotion.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apiserver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/pages/dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -105,6 +105,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebstormProjects\kakaotalk-CA\front\pages\dashboard" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\apiserver" />
       <recent name="E:\WebstormProjects\kakaotalk-CA\front\src\fonts" />
     </key>
@@ -130,9 +131,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front/pages/home.js" working-dir="$PROJECT_DIR$/front/pages/dashboard">
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="kakaotalk-CA" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -153,6 +151,9 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="home.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front/pages/home.js" working-dir="$PROJECT_DIR$/front/pages/dashboard">
       <method v="2" />
     </configuration>
   </component>

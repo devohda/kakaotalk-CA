@@ -14,8 +14,12 @@ module.exports = {
 				destination: 'http://34.146.140.41:5000/loveCalc'
 			},
 			{
-				source: '/api/sentiment',
-				destination: 'http://34.146.140.41:5000/sentiment'
+				source: '/api/sentiment1',
+				destination: 'http://34.146.140.41:5000/sentiment1'
+			},
+			{
+				source: '/api/sentiment2',
+				destination: 'http://34.146.140.41:5000/sentiment2'
 			},
 			{
 				source: '/',

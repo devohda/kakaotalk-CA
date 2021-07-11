@@ -37,9 +37,15 @@ const Navigation = () => {
 							active={false}
 						/>
 						<SidebarItems
-							link="/dashboard/sentiment"
+							link="/dashboard/sentiment1"
 							icon={FiPieChart}
-							title="기분에 따라 사용하는 단어"
+							title="기분 좋을 때 사용하는 단어"
+							active={false}
+						/>
+						<SidebarItems
+							link="/dashboard/sentiment2"
+							icon={FiPieChart}
+							title="기분 나쁠 때 사용하는 단어"
 							active={false}
 						/>
 					</Flex>

@@ -10,7 +10,7 @@ const height = 400;
 import HorizontalBar from '../../components/HorizontalBar';
 import WordCloud from '../../components/WordCloud';
 
-const Sentiment = () => {
+const Sentiment1 = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
 
 	useEffect(() => {
@@ -92,4 +92,4 @@ const Sentiment = () => {
 	);
 };
 
-export default Sentiment;
+export default Sentiment1;
