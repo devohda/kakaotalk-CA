@@ -86,7 +86,6 @@ class Preprocessing(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
-        print(data)
         # 전체 대화 개수
         total_text = len(data)
 
@@ -98,9 +97,11 @@ class Preprocessing(Resource):
         df_user = data.groupby("User")["Message"].count().to_dict()
 
         # 전처리함수, 데이터에서 적용할 컬럼, workers 수
-        # data = data[data.Date.str[:4] == "2021"]  # 2021년 대화만 남기기
+        data = data[data.Date.str[:4] == "2021"]  # 2021년 대화만 남기기
         preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3)
         data["preprocessed"] = preprocessed
+
+        print(data)
 
         result = {
             "firstdate": firstdate,
