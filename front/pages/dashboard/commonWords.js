@@ -9,6 +9,7 @@ const width = 400;
 const height = 400;
 
 import WordCloud from '../../components/WordCloud';
+axios.defaults.timeout = 500000;
 
 const CommonWords = () => {
 	const { chatData, loadData } = useContext(UserContext);
@@ -16,18 +17,22 @@ const CommonWords = () => {
 	const [name1, setName1] = useState('');
 	const [name2, setName2] = useState('');
 	const [words, setWords] = useState(null);
+	const [server, setServer] = useState(false);
 
 	useEffect(async () => {
 		if (chatData === null) {
 			loadData();
-		} else if (!words && chatData !== null) {
+		} else if (!words && chatData !== null && !server) {
+			setServer(true);
 			const instance = await axios.create({
 				url: '/api/commonWords',
 				timeout: 500000
 			});
 
 			instance
-				.post('/api/commonWords', chatData)
+				.post('http://34.146.140.41:5000/commonWords', chatData, {
+					timeout: 500000
+				})
 				.then(res => {
 					const data = res.data;
 					const users = Object.keys(data.df_user);
@@ -40,7 +45,7 @@ const CommonWords = () => {
 					});
 					setWords(cloudData);
 				})
-				.catch(err => console.log(err));
+				.catch(err => console.log(`timeout : ${err}`));
 		}
 	});
 
