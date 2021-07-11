@@ -107,7 +107,6 @@ class Preprocessing(Resource):
             "df_user": df_user,
             "data": data.to_json()
         }
-        print(result)
         return result
 
 
