@@ -124,8 +124,8 @@ class ChatReport(Resource):
         # request 는 json 형태로 반환됨
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
+        print(parsed_request)
 
-        print(data)
         # 1. 2021년 대화개수 비교
         df_2021 = data[data.Date.str[:4] == "2021"]  # 2021년 대화만 남기기
         year_month = df_2021.Date.str[:7]  # year,month 부분만 문자열 자르기
