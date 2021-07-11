@@ -14,8 +14,15 @@ const LoveCalc = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
 
 	useEffect(() => {
-		if (chatData === null) {
+		if (!chatData) {
 			loadData();
+		} else {
+			axios.post('/api/loveCalc', JSON.parse(chatData))
+				.then(res => {
+					const data = res.data;
+					console.log(data);
+				})
+				.catch(err => console.log(`timeout : ${err}`));
 		}
 	}, [chatData]);
 

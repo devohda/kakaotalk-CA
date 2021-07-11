@@ -346,7 +346,7 @@ class Preprocessing(Resource):
         }
 
 
-@api.route('/sentiment1')
+@api.route('/sentiment2')
 class Preprocessing(Resource):
     def post(self):
         # request 는 json 형태로 반환됨
@@ -390,5 +390,6 @@ class Preprocessing(Resource):
             "me_n_word": me_n_word.to_json(orient='records', force_ascii=False),
             "you_n_word": you_n_word.to_json(orient='records', force_ascii=False)
         }
+
 
 app.run(debug=True, host='0.0.0.0', port=5000)
