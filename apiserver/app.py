@@ -105,7 +105,7 @@ class Preprocessing(Resource):
             "firstdate": firstdate,
             "lastdate": lastdate,
             "df_user": df_user,
-            "data": data.to_json(orient='records')
+            "data": data.to_json()
         }
         print(result)
         return result
