@@ -10,7 +10,6 @@ const CommonWords = () => {
 	const [words1, setWords1] = useState(null);
 	const [words2, setWords2] = useState(null);
 	useEffect(async () => {
-		console.log(name1, name2);
 		if (!chatData) {
 			loadData();
 		} else {
@@ -20,11 +19,22 @@ const CommonWords = () => {
 					console.log(data);
 					const tags_me = data.tags_me;
 					const tags_you = data.tags_you;
+
+					console.log(tags_me[0]);
+
 					const cloudData1 = tags_me.map(tag => {
-						return { key: tag[0], value: tag[1] };
+						const hundred = parseInt(Number(tag[1]) / 100);
+						return {
+							key: tag[0],
+							value: String(Number(tag[1]) - 100 * hundred)
+						};
 					});
 					const cloudData2 = tags_you.map(tag => {
-						return { key: tag[0], value: tag[1] };
+						const hundred = parseInt(Number(tag[1]) / 100);
+						return {
+							key: tag[0],
+							value: String(Number(tag[1]) - 100 * hundred)
+						};
 					});
 
 					setWords1(cloudData1);
