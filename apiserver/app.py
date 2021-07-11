@@ -336,14 +336,15 @@ class Sentiment1(Resource):
         me_p_text = list(df_me_pos.morphs)  # 형태소 분석한것들 가져오기
         me_p_text = ' '.join(me_p_text)  # counter에 넣기전 처리
         count = Counter(me_p_text.split())  # 단어 개수 세는 counter~~~
-        me_p_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
+        me_p_data = count.most_common(20).to_dict()
         me_p_word = pd.DataFrame(me_p_data, columns=["word", "count"])
 
         # 유저2의 긍정적인 단어
         you_p_text = list(df_you_pos.morphs)
         you_p_text = ' '.join(you_p_text)
         count = Counter(you_p_text.split())
-        you_p_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
+        you_p_data = count.most_common(20)
+        print(you_p_data)
         you_p_word = pd.DataFrame(you_p_data, columns=["word", "count"])
 
         return {

@@ -35,6 +35,8 @@ const Table = props => {
 				fontWeight="bold"
 				fontSize="2xl"
 				borderBottom="solid white 3px"
+				alignItems="center"
+				textAlign="center"
 			>
 				<Flex flex={1} pl={10}></Flex>
 				<Flex flex={1}>{props.names.name1}</Flex>

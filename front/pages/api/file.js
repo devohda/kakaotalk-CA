@@ -51,11 +51,12 @@ const txtToJSON = txt_file => {
 					.substr(str.indexOf('[') + 1, str.indexOf(']') - 1)
 					.split(/ |:/);
 
-				time[1] = Number(time[1]) === 24 ? 0 : Number(time[1]);
+				time[1] = Number(time[1]);
 				time[2] = Number(time[2]);
-				if (time[0] === '오후') time[1] += 12;
+				if (time[0] === '오후')
+					time[1] = time[1] + 12 == 24 ? 0 : time[1] + 12;
 
-				const timeData =
+				let timeData =
 					fillZero(String(time[1]), 2) +
 					':' +
 					fillZero(String(time[2]), 2) +

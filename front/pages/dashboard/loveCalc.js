@@ -75,7 +75,7 @@ const LoveCalc = () => {
 					alignItems="center"
 					flexDir="column"
 				>
-					{hour && (
+					{youPosProp && (
 						<Table
 							names={{ name1, name2 }}
 							data={[
