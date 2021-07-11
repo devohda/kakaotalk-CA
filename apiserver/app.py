@@ -21,7 +21,7 @@ from wordcloud import WordCloud #워드클라우드 시각화
 #멀티프로세싱으로 시간 단축
 from multiprocessing import Pool
 
-import flask_cors CORS, cross_origin
+from flask_cors import CORS
 
 
 app = Flask(__name__)  # Flask 객체 선언, 파라미터로 어플리케이션 패키지의 이름을 넣어줌.
