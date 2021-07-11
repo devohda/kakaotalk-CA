@@ -25,6 +25,10 @@
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apiserver/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/apiserver/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,11 +155,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.home.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,7 +194,7 @@
       <workItem from="1625901226934" duration="34000" />
       <workItem from="1625995125592" duration="4193000" />
       <workItem from="1626008536656" duration="895000" />
-      <workItem from="1626016593005" duration="5196000" />
+      <workItem from="1626016593005" duration="6515000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>

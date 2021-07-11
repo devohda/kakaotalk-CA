@@ -7,7 +7,9 @@ import UserContext from '../components/UserContext';
 
 export default class MyApp extends App {
 	state = {
-		chatData: null
+		chatData: null,
+		name1: null,
+		name2: null
 	};
 
 	componentDidMount = () => {
@@ -22,21 +24,22 @@ export default class MyApp extends App {
 	};
 
 	loadData = () => {
+		console.log('load data');
 		const chatData = localStorage.getItem('chat-data');
 		if (chatData) {
+			console.log(chatData);
 			this.setState({
 				chatData
 			});
 		} else {
+			console.log("data isn't exist");
 			Router.push('/home');
 		}
 	};
 
 	analyzeData = data => {
 		localStorage.setItem('chat-data', data);
-
 		this.setState({ chatData: data });
-		console.log('data is exist!');
 		Router.push('/dashboard/chatReport');
 	};
 
@@ -54,6 +57,8 @@ export default class MyApp extends App {
 				<UserContext.Provider
 					value={{
 						chatData: this.state.chatData,
+						name1: this.state.name1,
+						name2: this.state.name2,
 						analyzeData: this.analyzeData,
 						resetData: this.resetData,
 						loadData: this.loadData

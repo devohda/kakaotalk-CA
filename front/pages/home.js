@@ -8,6 +8,7 @@ import {
 	Input
 } from '@chakra-ui/react';
 import UserContext from '../components/UserContext';
+import axios from 'axios';
 
 const Home = () => {
 	const [fileData, setFileData] = useState(null);
@@ -29,7 +30,25 @@ const Home = () => {
 				body
 			})
 				.then(res => res.json())
-				.then(data => analyzeData(data));
+				.then(async data => {
+					axios.post(
+						'http://34.146.140.41:5000/preprocessing',
+						data,
+						{
+							timeout: 500000
+						}
+					)
+						.then(res => {
+							const {
+								firstdate,
+								lastdate,
+								df_user,
+								data
+							} = res.data;
+							analyzeData(data.data);
+						})
+						.catch(err => console.log(`timeout : ${err}`));
+				});
 		} else {
 			alert('파일을 선택하세요.');
 		}

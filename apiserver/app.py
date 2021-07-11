@@ -101,12 +101,14 @@ class Preprocessing(Resource):
         preprocessed = use_multiprocess(kakao_text_preprocessing, data["Message"], 3)
         data["preprocessed"] = preprocessed
 
-        return {
+        result = {
             "firstdate": firstdate,
             "lastdate": lastdate,
             "df_user": df_user,
             "data": data.to_json(orient='records')
         }
+        print(result)
+        return result
 
 
 def time_24(t):
