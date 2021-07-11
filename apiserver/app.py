@@ -312,10 +312,9 @@ class Sentiment1(Resource):
 
         sa = Pororo(task="sentiment", model="brainbert.base.ko.nsmc", lang="ko")  # Pororo 감성분석 모델
         df = data[data["Date"].str[:7] == '2021-06'].reset_index(drop=True)  # 2021-6월 대화만
-
+        print(df)
         user = df.User.unique()
-        print(user[0])
-        print(user[1])
+        print(user)
         df_me = df[df.User == user[0]].reset_index(drop=True)  # 유저1
         df_you = df[df.User == user[1]].reset_index(drop=True)  # 유저2
 
