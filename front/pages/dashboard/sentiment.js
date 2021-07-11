@@ -8,27 +8,16 @@ const width = 400;
 const height = 400;
 
 import HorizontalBar from '../../components/HorizontalBar';
+import WordCloud from '../../components/WordCloud';
 
-const Emotion = () => {
-	const { chatData, loadData } = useContext(UserContext);
-
-	const [name1, setName1] = useState('');
-	const [name2, setName2] = useState('');
+const Sentiment = () => {
+	const { chatData, name1, name2, loadData } = useContext(UserContext);
 
 	useEffect(() => {
 		if (chatData === null) {
 			loadData();
-		} else if (!name1 && !name2 && chatData !== null) {
-			axios.post('/api/commonWords', chatData)
-				.then(res => {
-					const data = res.data;
-					const users = Object.keys(data.df_user);
-					setName1(users[0]);
-					setName2(users[1]);
-				})
-				.catch(err => console.log(err));
 		}
-	});
+	}, [chatData]);
 
 	return (
 		<Flex h="100vh" flexDir="row" overflow="hidden" maxW="2000px">
@@ -103,4 +92,4 @@ const Emotion = () => {
 	);
 };
 
-export default Emotion;
+export default Sentiment;

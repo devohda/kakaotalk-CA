@@ -37,7 +37,7 @@ const Navigation = () => {
 							active={false}
 						/>
 						<SidebarItems
-							link="/dashboard/emotion"
+							link="/dashboard/sentiment"
 							icon={FiPieChart}
 							title="기분에 따라 사용하는 단어"
 							active={false}

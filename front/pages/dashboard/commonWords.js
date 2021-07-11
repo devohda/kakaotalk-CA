@@ -9,6 +9,7 @@ const CommonWords = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
 	const [words1, setWords1] = useState(null);
 	const [words2, setWords2] = useState(null);
+
 	useEffect(async () => {
 		if (!chatData) {
 			loadData();
@@ -16,7 +17,6 @@ const CommonWords = () => {
 			axios.post('/api/commonWords', JSON.parse(chatData))
 				.then(res => {
 					const data = res.data;
-					console.log(data);
 					const tags_me = data.tags_me;
 					const tags_you = data.tags_you;
 
