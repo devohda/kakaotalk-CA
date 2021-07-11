@@ -256,7 +256,7 @@ def Morphology_analysis(sentence):
 
 
 @api.route('/loveCalc')
-class Preprocessing(Resource):
+class LoveCalc(Resource):
     def post(self):
         # request 는 json 형태로 반환됨
         parsed_request = request.get_json()
@@ -301,7 +301,7 @@ class Preprocessing(Resource):
 
 
 @api.route('/sentiment1')
-class Preprocessing(Resource):
+class Sentiment1(Resource):
     def post(self):
         # request 는 json 형태로 반환됨
         parsed_request = request.get_json()
@@ -347,7 +347,7 @@ class Preprocessing(Resource):
 
 
 @api.route('/sentiment2')
-class Preprocessing(Resource):
+class Sentiment2(Resource):
     def post(self):
         # request 는 json 형태로 반환됨
         parsed_request = request.get_json()
