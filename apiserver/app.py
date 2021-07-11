@@ -86,6 +86,7 @@ class Preprocessing(Resource):
         parsed_request = request.get_json()
         data = pd.DataFrame(parsed_request)
 
+        print(data)
         # 전체 대화 개수
         total_text = len(data)
 
