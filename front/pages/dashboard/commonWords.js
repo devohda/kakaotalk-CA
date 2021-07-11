@@ -20,21 +20,11 @@ const CommonWords = () => {
 					const tags_me = data.tags_me;
 					const tags_you = data.tags_you;
 
-					console.log(tags_me[0]);
-
 					const cloudData1 = tags_me.map(tag => {
-						const hundred = parseInt(Number(tag[1]) / 100);
-						return {
-							key: tag[0],
-							value: String(Number(tag[1]) - 100 * hundred)
-						};
+						return { key: tag[0], value: tag[1] };
 					});
 					const cloudData2 = tags_you.map(tag => {
-						const hundred = parseInt(Number(tag[1]) / 100);
-						return {
-							key: tag[0],
-							value: String(Number(tag[1]) - 100 * hundred)
-						};
+						return { key: tag[0], value: tag[1] };
 					});
 
 					setWords1(cloudData1);

@@ -16,7 +16,13 @@ export default class WordCloud extends Component {
 				datasets: [
 					{
 						label: '',
-						data: this.props.words.map(d => 10 + d.value * 10)
+						data: this.props.words.map(d => {
+							if (d.value > 10) {
+								return 15 + parseInt(d.value % 100);
+							} else {
+								return 10 + d.value * 10;
+							}
+						})
 					}
 				]
 			},
