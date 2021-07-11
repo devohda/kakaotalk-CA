@@ -314,6 +314,8 @@ class Sentiment1(Resource):
         df = data[data["Date"].str[:7] == '2021-06'].reset_index(drop=True)  # 2021-6월 대화만
 
         user = df.User.unique()
+        print(user[0])
+        print(user[1])
         df_me = df[df.User == user[0]].reset_index(drop=True)  # 유저1
         df_you = df[df.User == user[1]].reset_index(drop=True)  # 유저2
 
