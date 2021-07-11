@@ -337,20 +337,17 @@ class Sentiment1(Resource):
         me_p_text = ' '.join(me_p_text)  # counter에 넣기전 처리
         count = Counter(me_p_text.split())  # 단어 개수 세는 counter~~~
         me_p_data = count.most_common(20)
-        print(me_p_data)
-        me_p_word = pd.DataFrame(me_p_data, columns=["word", "count"])
+
 
         # 유저2의 긍정적인 단어
         you_p_text = list(df_you_pos.morphs)
         you_p_text = ' '.join(you_p_text)
         count = Counter(you_p_text.split())
         you_p_data = count.most_common(20)
-        print(you_p_data)
-        you_p_word = pd.DataFrame(you_p_data, columns=["word", "count"])
 
         return {
-            "me_p_word": me_p_word.to_json(orient='records', force_ascii=False),
-            "you_p_word": you_p_word.to_json(orient='records', force_ascii=False)
+            "me_p_data": me_p_data,
+            "you_p_data": you_p_data
         }
 
 
@@ -384,19 +381,16 @@ class Sentiment2(Resource):
         me_n_text = list(df_me_neg.morphs)
         me_n_text = ' '.join(me_n_text)
         count = Counter(me_n_text.split())
-        me_n_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
-        me_n_word = pd.DataFrame(me_n_data, columns=["word", "count"])
+        me_n_data = count.most_common(20)
 
         # 유저2의 부정적인 단어
         you_n_text = list(df_you_neg.morphs)
         you_n_text = ' '.join(you_n_text)
         count = Counter(you_n_text.split())
-        you_n_data = count.most_common(20).to_dict()  # 이거 딕셔너리 형태로 사용하면 됩니당!!!
-        you_n_word = pd.DataFrame(you_n_data, columns=["word", "count"])
-
+        you_n_data = count.most_common(20)
         return {
-            "me_n_word": me_n_word.to_json(orient='records', force_ascii=False),
-            "you_n_word": you_n_word.to_json(orient='records', force_ascii=False)
+            "me_n_data": me_n_data,
+            "you_n_data": you_n_data
         }
 
 
