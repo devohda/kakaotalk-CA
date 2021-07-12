@@ -21,7 +21,13 @@ const LoveCalc = () => {
 		if (!chatData) {
 			loadData();
 		} else {
-			axios.post('/api/loveCalc', JSON.parse(chatData))
+			axios.post(
+				'http://34.146.140.41:5000/loveCalc',
+				JSON.parse(chatData),
+				{
+					timeout: 5000000
+				}
+			)
 				.then(res => {
 					const data = res.data;
 					const {
