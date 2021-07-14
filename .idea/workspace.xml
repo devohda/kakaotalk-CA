@@ -23,11 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/components/HorizontalBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/HorizontalBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
