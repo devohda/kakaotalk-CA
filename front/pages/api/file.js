@@ -63,7 +63,6 @@ const txtToJSON = txt_file => {
 					':00';
 				const date = `${chatDate} ${timeData}`;
 
-				console.log(timeData);
 				// 내용 추출
 				const message = str.substr(str.indexOf(']') + 2);
 
