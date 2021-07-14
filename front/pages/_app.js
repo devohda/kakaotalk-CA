@@ -4,9 +4,6 @@ import App from 'next/app';
 import Router from 'next/router';
 import { ChakraProvider } from '@chakra-ui/react';
 import UserContext from '../components/UserContext';
-import axios from 'axios'
-
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 export default class MyApp extends App {
 	state = {

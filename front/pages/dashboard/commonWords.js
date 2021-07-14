@@ -4,7 +4,7 @@ import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
 import WordCloud from '../../components/WordCloud';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 const CommonWords = () => {
 	const { chatData, name1, name2, loadData } = useContext(UserContext);
 	const [words1, setWords1] = useState(null);

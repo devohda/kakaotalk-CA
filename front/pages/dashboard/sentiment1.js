@@ -3,7 +3,7 @@ import { Flex, Heading, Text } from '@chakra-ui/react';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 import HorizontalBar from '../../components/HorizontalBar';
 
 const Sentiment1 = () => {

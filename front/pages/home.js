@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import UserContext from '../components/UserContext';
 import axios from 'axios';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 const Home = () => {
 	const [fileData, setFileData] = useState(null);
 	const { analyzeData } = useContext(UserContext);
@@ -35,7 +35,7 @@ const Home = () => {
 						'http://34.146.140.41:5000/preprocessing',
 						data,
 						{
-							timeout: 500000
+							timeout: 5000000
 						}
 					)
 						.then(res => {

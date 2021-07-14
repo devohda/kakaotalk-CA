@@ -4,7 +4,7 @@ import LineChart from '../../components/LineChart';
 import Navigation from '../../components/Navigation';
 import UserContext from '../../components/UserContext';
 import axios from 'axios';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 const ChatReport = () => {
 	const { chatData, loadData } = useContext(UserContext);
 
