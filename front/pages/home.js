@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import UserContext from '../components/UserContext';
 import axios from 'axios';
-
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 const Home = () => {
 	const [fileData, setFileData] = useState(null);
 	const { analyzeData } = useContext(UserContext);
