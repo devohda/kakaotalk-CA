@@ -23,8 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a279f50b-e533-4674-896e-51aeb2f906f7" name="Default Changelist" comment="remove files">
+      <change afterPath="$PROJECT_DIR$/apiserver/get-pip.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/components/NavigationData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/pages/api/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/api/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/MyChart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/MyChart2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/MyChart3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/MyChart4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/components/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/components/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/_app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/chatReport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/commonWords.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/loveCalc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/dashboard/sentiment2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/pages/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +91,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/pages/dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -193,8 +207,9 @@
       <workItem from="1626008536656" duration="895000" />
       <workItem from="1626016593005" duration="6515000" />
       <workItem from="1626047063515" duration="1179000" />
-      <workItem from="1626073776217" duration="1233000" />
-      <workItem from="1626267947360" duration="395000" />
+      <workItem from="1626195451916" duration="43000" />
+      <workItem from="1626195783394" duration="73000" />
+      <workItem from="1626256773236" duration="5843000" />
     </task>
     <task id="LOCAL-00001" summary="remove files">
       <created>1625043461959</created>
